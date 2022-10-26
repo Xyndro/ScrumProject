@@ -1,10 +1,10 @@
 CREATE TABLE [dbo].[Billing]
 (
-	[CardNumber] INT NOT NULL PRIMARY KEY, 
+    [CardNumber] INT NOT NULL PRIMARY KEY, 
     [ExpirationDate] DATE NOT NULL, 
     [CVV] INT NOT NULL, 
     [BillingAddress] VARCHAR(100) NOT NULL,
-	  [BillingCity] VARCHAR(30) NOT NULL,
-	  [BillingState] CHAR(2) NOT NULL,
+    [BillingCity] VARCHAR(30) NOT NULL,
+    [BillingState] CHAR(2) NOT NULL,
     [PostalCode] INT NOT NULL
 )
