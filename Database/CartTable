@@ -1,6 +1,6 @@
-CREATE TABLE [dbo].[Cart]
-(
-	[CartID] VARCHAR(50) NOT NULL PRIMARY KEY, 
-    [CartMaxSize] INT NOT NULL, 
-    [CartTotalPrice] DECIMAL(10, 2) NOT NULL
-)
+CREATE TABLE [dbo].[Cart] (
+    [CartID]   VARCHAR (50)    NOT NULL PRIMARY KEY,
+    [CartMaxSize] INT  NOT NULL,
+    [CartTotalPrice] DECIMAL (10, 2) NOT NULL
+);
+
