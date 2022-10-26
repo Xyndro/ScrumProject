@@ -1,0 +1,42 @@
+DROP DATABASE;
+
+CREATE TABLE [dbo].[User]
+(
+	[UserName] VARCHAR(100) NOT NULL PRIMARY KEY, 
+    [Password] VARCHAR(100) NOT NULL, 
+    [Email] VARCHAR(100) NOT NULL
+),
+
+CREATE TABLE [dbo].[Desktop]
+(
+	[DesktopSKU] INT NOT NULL PRIMARY KEY, 
+    [DesktopName] VARBINARY(50) NOT NULL, 
+    [DesktopPrice] DECIMAL(10, 2) NOT NULL, 
+    [DesktopDescription] VARCHAR(150) NULL, 
+    [DesktopImage] IMAGE NOT NULL
+),
+
+CREATE TABLE [dbo].[Monitor]
+(
+	[MonitorSKU] INT NOT NULL PRIMARY KEY, 
+    [MonitorName] VARCHAR(50) NOT NULL, 
+    [MonitorPrice] DECIMAL(10, 2) NOT NULL, 
+    [MonitorDescription] VARCHAR(150) NULL, 
+    [MonitorImage] IMAGE NOT NULL
+),
+
+CREATE TABLE [dbo].[Peripheral]
+(
+	[PeripheralSKU] INT NOT NULL PRIMARY KEY, 
+    [PeripheralName] VARCHAR(50) NOT NULL, 
+    [PeripheralPrice] DECIMAL(10, 2) NOT NULL, 
+    [PeripheralDescription] VARCHAR(150) NULL, 
+    [PeripheralImage] IMAGE NULL
+),
+
+CREATE TABLE [dbo].[Cart]
+(
+	[CartID] VARCHAR(50) NOT NULL PRIMARY KEY, 
+    [CartMaxSize] INT NOT NULL, 
+    [CartTotalPrice] DECIMAL(10, 2) NOT NULL
+)
