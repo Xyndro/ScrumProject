@@ -1,0 +1,8 @@
+CREATE TABLE [dbo].[Monitor]
+(
+	[MonitorSKU] INT NOT NULL PRIMARY KEY, 
+    [MonitorName] VARCHAR(50) NOT NULL, 
+    [MonitorPrice] DECIMAL(10, 2) NOT NULL, 
+    [MonitorDescription] VARCHAR(150) NULL, 
+    [MonitorImage] IMAGE NOT NULL
+)
