@@ -1,8 +1,7 @@
-CREATE TABLE [dbo].[Peripheral]
-(
-	[PeripheralSKU] INT NOT NULL PRIMARY KEY, 
-    [PeripheralName] VARCHAR(50) NOT NULL, 
-    [PeripheralPrice] DECIMAL(10, 2) NOT NULL, 
-    [PeripheralDescription] VARCHAR(150) NULL, 
-    [PeripheralImage] IMAGE NULL
-)
+CREATE TABLE [dbo].[Peripheral] (
+    [PeripheralSKU] INT NOT NULL PRIMARY KEY,
+    [PeripheralName]  VARCHAR (50)    NOT NULL,
+    [PeripheralPrice]   DECIMAL (10, 2) NOT NULL,
+    [PeripheralDescription] VARCHAR (150)   NULL,
+    [PeripheralImage] IMAGE  NULL,
+);
