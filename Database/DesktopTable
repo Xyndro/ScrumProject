@@ -1,8 +1,10 @@
-CREATE TABLE [dbo].[Desktop]
-(
-	[DesktopSKU] INT NOT NULL PRIMARY KEY, 
-    [DesktopName] VARBINARY(50) NOT NULL, 
+CREATE TABLE [dbo].[Desktop] (
+    [DesktopSKU] INT NOT NULL PRIMARY KEY,
+    [DesktopName] VARCHAR (50) NOT NULL,
+    [DesktopManufacturer] VARCHAR(20) NOT NULL,
+    [DesktopCPU] VARCHAR(50) NOT NULL,
+    [DesktopStorage] VARCHAR(50) NOT NULL,
     [DesktopPrice] DECIMAL(10, 2) NOT NULL, 
     [DesktopDescription] VARCHAR(150) NULL, 
-    [DesktopImage] IMAGE NOT NULL
-)
+    [DesktopImage] IMAGE NULL
+);
