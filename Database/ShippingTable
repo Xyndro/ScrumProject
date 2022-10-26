@@ -1,6 +1,6 @@
 CREATE TABLE [dbo].[Shipping]
 (
-	[ShippingAddress] VARCHAR(100) NOT NULL PRIMARY KEY, 
+    [ShippingAddress] VARCHAR(100) NOT NULL PRIMARY KEY, 
     [ShippingCity] VARCHAR(30) NOT NULL, 
     [ShippingState] CHAR(2) NOT NULL, 
     [ZipCode] INT NOT NULL
