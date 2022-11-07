@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CST4708_Project
 {
-    public partial class LaptopForm : Form
+    public partial class DesktopForm : Form
     {
-        public LaptopForm()
+        public DesktopForm()
         {
             InitializeComponent();
         }
