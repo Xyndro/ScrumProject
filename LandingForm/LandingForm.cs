@@ -6,45 +6,81 @@ namespace CST4708_Project
         {
             InitializeComponent();
         }
-       
-        private void DesktopButton_Click(object sender, EventArgs e) //navigation to Desktop Form
+
+        //LandingForm_Load -> Upon loading, labels become transparent to blend in with background picture box
+        //Spaces seperate each element on form
+        private void LandingForm_Load(object sender, EventArgs e)
         {
-            DesktopForm desktops = new DesktopForm();
-            desktops.Show();
-            Visible = false;
+            LandingFormTitleLabel.Parent = LandingFormBackground;
+            LandingFormTitleLabel.BackColor = Color.Transparent;
+
+            LandingFormDescription.Parent = LandingFormBackground;
+            LandingFormDescription.BackColor = Color.Transparent;
+
+            LandingFormDesktopLabel.Parent = LandingFormBackground;
+            LandingFormDesktopLabel.BackColor = Color.Transparent;
+
+            LandingFormDesktopDescription.Parent = LandingFormBackground;
+            LandingFormDesktopDescription.BackColor = Color.Transparent;
+
         }
 
-        private void LaptopButton_Click(object sender, EventArgs e) //navigation to Laptop Form
-        {
-            LaptopForm laptops = new LaptopForm();
-            laptops.Show();
-            Visible = false;
-
-        }
-
-        private void PeripheralButton_Click(object sender, EventArgs e) //navigation to Peripheral Form
-        {
-            PeripheralForm peripherals = new PeripheralForm();
-            peripherals.Show();
-            Visible = false;
-        }
-
-        private void MonitorButton_Click(object sender, EventArgs e) //navigation to Monitor Form
-        {
-            MonitorForm monitors = new MonitorForm();
-            monitors.Show();
-            Visible = false;
-        }
-
-        private void LandingForm_Paint(object sender, PaintEventArgs e)  //LandingForm_Paint -> creates our symbol in the form using graphics object
+        //LandingFormBackground -> creates our symbol on the picture box using graphics object
+        private void LandingFormBackground_Paint(object sender, PaintEventArgs e)
         {
             Graphics graphic = e.Graphics;
             SolidBrush orangeBrush = new SolidBrush(Color.Orange);
             SolidBrush blueBrush = new SolidBrush(Color.Blue);
 
-            graphic.FillRectangle(orangeBrush, 30, 50, 120, 90);
-            graphic.FillRectangle(blueBrush, 50, 70, 81, 50);
-
+            graphic.FillRectangle(orangeBrush, 20, 20, 90, 80);
+            graphic.FillRectangle(blueBrush, 39, 40, 52, 40);
         }
+
+
+        //methods below are click events for navigation
+        //---------------------------------------------------------------------------------------
+        private void homeToolStrip_Click(object sender, EventArgs e)
+        {
+            LandingForm home = new LandingForm();
+            home.Show();
+            Visible = false;
+        }
+
+        private void desktopToolStrip_Click(object sender, EventArgs e)
+        {
+            DesktopForm desktop = new DesktopForm();
+            desktop.Show();
+            Visible = false; 
+        }
+
+        private void laptopToolStrip_Click(object sender, EventArgs e)
+        {
+            LaptopForm laptop = new LaptopForm();
+            laptop.Show();
+            Visible = false;
+        }
+
+        private void monitorToolStrip_Click(object sender, EventArgs e)
+        {
+            MonitorForm monitor = new MonitorForm();
+            monitor.Show();
+            Visible = false;
+        }
+
+        private void peripheralToolStrip_Click(object sender, EventArgs e)
+        {
+            PeripheralForm peripheral = new PeripheralForm();
+            peripheral.Show();
+            Visible = false;
+        }
+
+        private void logInToolStrip_Click(object sender, EventArgs e)
+        {
+            LogInForm logIn = new LogInForm();
+            logIn.Show();
+            Visible = false;
+        }
+
+        //---------------------------------------------------------------------------------------
     }
 }
