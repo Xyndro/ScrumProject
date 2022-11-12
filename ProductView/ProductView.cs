@@ -16,5 +16,12 @@ namespace CST4708_Project
         {
             InitializeComponent();
         }
+
+        //ProductView_Paint -> creates our symbol in the form using graphics object
+        private void ProductView_Paint(object sender, PaintEventArgs e)
+        {
+            
+
+        }
     }
 }
