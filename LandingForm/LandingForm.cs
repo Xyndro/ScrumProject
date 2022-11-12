@@ -14,18 +14,22 @@ namespace CST4708_Project
             LandingFormTitleLabel.Parent = LandingFormBackground;
             LandingFormTitleLabel.BackColor = Color.Transparent;
 
-            LandingFormDescription.Parent = LandingFormBackground;
-            LandingFormDescription.BackColor = Color.Transparent;
+            LandingFormDesktopsLabel.Parent = LandingFormBackground;
+            LandingFormDesktopsLabel.BackColor = Color.Transparent;
 
-            LandingFormDesktopLabel.Parent = LandingFormBackground;
-            LandingFormDesktopLabel.BackColor = Color.Transparent;
+            LandingFormLaptopsLabel.Parent = LandingFormBackground;
+            LandingFormLaptopsLabel.BackColor = Color.Transparent;
 
-            LandingFormDesktopDescription.Parent = LandingFormBackground;
-            LandingFormDesktopDescription.BackColor = Color.Transparent;
+            LandingFormMonitorsLabel.Parent = LandingFormBackground;
+            LandingFormMonitorsLabel.BackColor = Color.Transparent;
+
+            LandingFormPeripheralsLabel.Parent = LandingFormBackground;
+            LandingFormPeripheralsLabel.BackColor = Color.Transparent;
 
         }
 
         //LandingFormBackground -> creates our symbol on the picture box using graphics object
+        //Graphic located at top left of form under menu strip
         private void LandingFormBackground_Paint(object sender, PaintEventArgs e)
         {
             Graphics graphic = e.Graphics;
