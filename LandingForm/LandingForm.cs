@@ -85,6 +85,34 @@ namespace CST4708_Project
             Visible = false;
         }
 
+        private void LandingFormToDesktopsButton_Click(object sender, EventArgs e)
+        {
+            DesktopForm desktop = new DesktopForm();
+            desktop.Show();
+            Visible = false;
+        }
+
+        private void LandingFormToLaptopsButton_Click(object sender, EventArgs e)
+        {
+            LaptopForm laptop = new LaptopForm();
+            laptop.Show();
+            Visible = false;
+        }
+
+        private void LandingFormToMonitorsButton_Click(object sender, EventArgs e)
+        {
+            MonitorForm monitor = new MonitorForm();
+            monitor.Show();
+            Visible = false;
+        }
+
+        private void LandingFormToPeripheralsButton_Click(object sender, EventArgs e)
+        {
+            PeripheralForm peripheral = new PeripheralForm();
+            peripheral.Show();
+            Visible = false;
+        }
+
         //---------------------------------------------------------------------------------------
     }
 }
