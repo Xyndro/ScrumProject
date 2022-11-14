@@ -30,7 +30,7 @@ namespace CST4708_Project
         {
             this.LandingFormBackground = new System.Windows.Forms.PictureBox();
             this.LandingFormTitleLabel = new System.Windows.Forms.Label();
-            this.LandingFormDesktopLabel = new System.Windows.Forms.Label();
+            this.LandingFormDesktopsLabel = new System.Windows.Forms.Label();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.logInToolStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.peripheralToolStrip = new System.Windows.Forms.ToolStripMenuItem();
@@ -38,7 +38,7 @@ namespace CST4708_Project
             this.laptopToolStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.desktopToolStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.homeToolStrip = new System.Windows.Forms.ToolStripMenuItem();
-            this.LandingFormLaptopLabel = new System.Windows.Forms.Label();
+            this.LandingFormLaptopsLabel = new System.Windows.Forms.Label();
             this.LandingFormMonitorsLabel = new System.Windows.Forms.Label();
             this.LandingFormPeripheralsLabel = new System.Windows.Forms.Label();
             this.LandingFormToDesktopsButton = new System.Windows.Forms.Button();
@@ -72,18 +72,18 @@ namespace CST4708_Project
             this.LandingFormTitleLabel.TabIndex = 8;
             this.LandingFormTitleLabel.Text = "Welcome!";
             // 
-            // LandingFormDesktopLabel
+            // LandingFormDesktopsLabel
             // 
-            this.LandingFormDesktopLabel.AutoSize = true;
-            this.LandingFormDesktopLabel.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.LandingFormDesktopLabel.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+            this.LandingFormDesktopsLabel.AutoSize = true;
+            this.LandingFormDesktopsLabel.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.LandingFormDesktopsLabel.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.LandingFormDesktopLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LandingFormDesktopLabel.Location = new System.Drawing.Point(104, 237);
-            this.LandingFormDesktopLabel.Name = "LandingFormDesktopLabel";
-            this.LandingFormDesktopLabel.Size = new System.Drawing.Size(127, 34);
-            this.LandingFormDesktopLabel.TabIndex = 10;
-            this.LandingFormDesktopLabel.Text = "Desktops";
+            this.LandingFormDesktopsLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.LandingFormDesktopsLabel.Location = new System.Drawing.Point(101, 237);
+            this.LandingFormDesktopsLabel.Name = "LandingFormDesktopsLabel";
+            this.LandingFormDesktopsLabel.Size = new System.Drawing.Size(127, 34);
+            this.LandingFormDesktopsLabel.TabIndex = 10;
+            this.LandingFormDesktopsLabel.Text = "Desktops";
             // 
             // menuStrip
             // 
@@ -147,18 +147,18 @@ namespace CST4708_Project
             this.homeToolStrip.Text = "Home";
             this.homeToolStrip.Click += new System.EventHandler(this.homeToolStrip_Click);
             // 
-            // LandingFormLaptopLabel
+            // LandingFormLaptopsLabel
             // 
-            this.LandingFormLaptopLabel.AutoSize = true;
-            this.LandingFormLaptopLabel.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.LandingFormLaptopLabel.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+            this.LandingFormLaptopsLabel.AutoSize = true;
+            this.LandingFormLaptopsLabel.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.LandingFormLaptopsLabel.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.LandingFormLaptopLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LandingFormLaptopLabel.Location = new System.Drawing.Point(400, 237);
-            this.LandingFormLaptopLabel.Name = "LandingFormLaptopLabel";
-            this.LandingFormLaptopLabel.Size = new System.Drawing.Size(113, 34);
-            this.LandingFormLaptopLabel.TabIndex = 13;
-            this.LandingFormLaptopLabel.Text = "Laptops";
+            this.LandingFormLaptopsLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.LandingFormLaptopsLabel.Location = new System.Drawing.Point(400, 237);
+            this.LandingFormLaptopsLabel.Name = "LandingFormLaptopsLabel";
+            this.LandingFormLaptopsLabel.Size = new System.Drawing.Size(113, 34);
+            this.LandingFormLaptopsLabel.TabIndex = 13;
+            this.LandingFormLaptopsLabel.Text = "Laptops";
             // 
             // LandingFormMonitorsLabel
             // 
@@ -188,39 +188,59 @@ namespace CST4708_Project
             // 
             // LandingFormToDesktopsButton
             // 
-            this.LandingFormToDesktopsButton.Location = new System.Drawing.Point(65, 274);
+            this.LandingFormToDesktopsButton.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.LandingFormToDesktopsButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.LandingFormToDesktopsButton.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.LandingFormToDesktopsButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.LandingFormToDesktopsButton.Location = new System.Drawing.Point(62, 274);
             this.LandingFormToDesktopsButton.Name = "LandingFormToDesktopsButton";
             this.LandingFormToDesktopsButton.Size = new System.Drawing.Size(196, 39);
             this.LandingFormToDesktopsButton.TabIndex = 16;
             this.LandingFormToDesktopsButton.Text = "View Desktops";
-            this.LandingFormToDesktopsButton.UseVisualStyleBackColor = true;
+            this.LandingFormToDesktopsButton.UseVisualStyleBackColor = false;
+            this.LandingFormToDesktopsButton.Click += new System.EventHandler(this.LandingFormToDesktopsButton_Click);
             // 
             // LandingFormToLaptopsButton
             // 
+            this.LandingFormToLaptopsButton.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.LandingFormToLaptopsButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.LandingFormToLaptopsButton.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.LandingFormToLaptopsButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.LandingFormToLaptopsButton.Location = new System.Drawing.Point(359, 274);
             this.LandingFormToLaptopsButton.Name = "LandingFormToLaptopsButton";
             this.LandingFormToLaptopsButton.Size = new System.Drawing.Size(196, 39);
             this.LandingFormToLaptopsButton.TabIndex = 17;
             this.LandingFormToLaptopsButton.Text = "View Laptops";
-            this.LandingFormToLaptopsButton.UseVisualStyleBackColor = true;
+            this.LandingFormToLaptopsButton.UseVisualStyleBackColor = false;
+            this.LandingFormToLaptopsButton.Click += new System.EventHandler(this.LandingFormToLaptopsButton_Click);
             // 
             // LandingFormToMonitorsButton
             // 
+            this.LandingFormToMonitorsButton.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.LandingFormToMonitorsButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.LandingFormToMonitorsButton.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.LandingFormToMonitorsButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.LandingFormToMonitorsButton.Location = new System.Drawing.Point(628, 274);
             this.LandingFormToMonitorsButton.Name = "LandingFormToMonitorsButton";
             this.LandingFormToMonitorsButton.Size = new System.Drawing.Size(196, 39);
             this.LandingFormToMonitorsButton.TabIndex = 18;
             this.LandingFormToMonitorsButton.Text = "View Monitors";
-            this.LandingFormToMonitorsButton.UseVisualStyleBackColor = true;
+            this.LandingFormToMonitorsButton.UseVisualStyleBackColor = false;
+            this.LandingFormToMonitorsButton.Click += new System.EventHandler(this.LandingFormToMonitorsButton_Click);
             // 
             // LandingFormToPeripheralsButton
             // 
+            this.LandingFormToPeripheralsButton.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.LandingFormToPeripheralsButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.LandingFormToPeripheralsButton.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.LandingFormToPeripheralsButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.LandingFormToPeripheralsButton.Location = new System.Drawing.Point(926, 274);
             this.LandingFormToPeripheralsButton.Name = "LandingFormToPeripheralsButton";
             this.LandingFormToPeripheralsButton.Size = new System.Drawing.Size(196, 39);
             this.LandingFormToPeripheralsButton.TabIndex = 19;
             this.LandingFormToPeripheralsButton.Text = "View Peripherals";
-            this.LandingFormToPeripheralsButton.UseVisualStyleBackColor = true;
+            this.LandingFormToPeripheralsButton.UseVisualStyleBackColor = false;
+            this.LandingFormToPeripheralsButton.Click += new System.EventHandler(this.LandingFormToPeripheralsButton_Click);
             // 
             // LandingForm
             // 
@@ -234,9 +254,9 @@ namespace CST4708_Project
             this.Controls.Add(this.LandingFormToDesktopsButton);
             this.Controls.Add(this.LandingFormPeripheralsLabel);
             this.Controls.Add(this.LandingFormMonitorsLabel);
-            this.Controls.Add(this.LandingFormLaptopLabel);
+            this.Controls.Add(this.LandingFormLaptopsLabel);
             this.Controls.Add(this.menuStrip);
-            this.Controls.Add(this.LandingFormDesktopLabel);
+            this.Controls.Add(this.LandingFormDesktopsLabel);
             this.Controls.Add(this.LandingFormTitleLabel);
             this.Controls.Add(this.LandingFormBackground);
             this.Name = "LandingForm";
@@ -253,7 +273,7 @@ namespace CST4708_Project
         #endregion
         private PictureBox LandingFormBackground;
         private Label LandingFormTitleLabel;
-        private Label LandingFormDesktopLabel;
+        private Label LandingFormDesktopsLabel;
         private MenuStrip menuStrip;
         private ToolStripMenuItem logInToolStrip;
         private ToolStripMenuItem peripheralToolStrip;
@@ -261,7 +281,7 @@ namespace CST4708_Project
         private ToolStripMenuItem laptopToolStrip;
         private ToolStripMenuItem desktopToolStrip;
         private ToolStripMenuItem homeToolStrip;
-        private Label LandingFormLaptopLabel;
+        private Label LandingFormLaptopsLabel;
         private Label LandingFormMonitorsLabel;
         private Label LandingFormPeripheralsLabel;
         private Button LandingFormToDesktopsButton;
