@@ -130,6 +130,7 @@ namespace CST4708_Project
             this.Controls.Add(this.LaptopFormBackground);
             this.Name = "LaptopForm";
             this.Text = "LaptopForm";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.LaptopForm_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.LaptopFormBackground)).EndInit();
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
