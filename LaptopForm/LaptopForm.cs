@@ -16,5 +16,15 @@ namespace CST4708_Project
         {
             InitializeComponent();
         }
+
+        private void LaptopForm_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics graphic = e.Graphics;
+            SolidBrush orangeBrush = new SolidBrush(Color.Orange);
+            SolidBrush blueBrush = new SolidBrush(Color.Blue);
+
+            graphic.FillRectangle(orangeBrush, 20, 20, 90, 80);
+            graphic.FillRectangle(blueBrush, 39, 40, 52, 40);
+        }
     }
 }
