@@ -36,6 +36,7 @@ namespace CST4708_Project
             this.laptopToolStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.desktopToolStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.homeToolStrip = new System.Windows.Forms.ToolStripMenuItem();
+            this.LaptopFormGoBackButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.LaptopFormBackground)).BeginInit();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -105,12 +106,26 @@ namespace CST4708_Project
             this.homeToolStrip.Size = new System.Drawing.Size(67, 24);
             this.homeToolStrip.Text = "Home";
             // 
+            // LaptopFormGoBackButton
+            // 
+            this.LaptopFormGoBackButton.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.LaptopFormGoBackButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.LaptopFormGoBackButton.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.LaptopFormGoBackButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.LaptopFormGoBackButton.Location = new System.Drawing.Point(36, 175);
+            this.LaptopFormGoBackButton.Name = "LaptopFormGoBackButton";
+            this.LaptopFormGoBackButton.Size = new System.Drawing.Size(121, 28);
+            this.LaptopFormGoBackButton.TabIndex = 4;
+            this.LaptopFormGoBackButton.Text = "Go Back";
+            this.LaptopFormGoBackButton.UseVisualStyleBackColor = false;
+            // 
             // LaptopForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1209, 662);
+            this.Controls.Add(this.LaptopFormGoBackButton);
             this.Controls.Add(this.menuStrip);
             this.Controls.Add(this.LaptopFormBackground);
             this.Name = "LaptopForm";
@@ -132,5 +147,6 @@ namespace CST4708_Project
         private ToolStripMenuItem laptopToolStrip;
         private ToolStripMenuItem desktopToolStrip;
         private ToolStripMenuItem homeToolStrip;
+        private Button LaptopFormGoBackButton;
     }
 }
