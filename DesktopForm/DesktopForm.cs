@@ -26,5 +26,11 @@ namespace CST4708_Project
             graphic.FillRectangle(orangeBrush, 20, 20, 90, 80);
             graphic.FillRectangle(blueBrush, 39, 40, 52, 40);
         }
+
+        private void DesktopForm_Load(object sender, EventArgs e)
+        {
+            DesktopFormTitleLabel.Parent = DesktopFormBackground;
+            DesktopFormTitleLabel.BackColor = Color.Transparent;
+        }
     }
 }
