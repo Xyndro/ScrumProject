@@ -14,6 +14,9 @@ namespace CST4708_Project
             LandingFormTitleLabel.Parent = LandingFormBackground;
             LandingFormTitleLabel.BackColor = Color.Transparent;
 
+            LandingFormDescription.Parent = LandingFormBackground;
+            LandingFormDescription.BackColor = Color.Transparent;
+
             LandingFormDesktopsLabel.Parent = LandingFormBackground;
             LandingFormDesktopsLabel.BackColor = Color.Transparent;
 
