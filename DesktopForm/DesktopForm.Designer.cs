@@ -36,7 +36,8 @@ namespace CST4708_Project
             this.desktopToolStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.homeToolStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.DesktopFormBackground = new System.Windows.Forms.PictureBox();
-            this.LaptopFormGoBackButton = new System.Windows.Forms.Button();
+            this.DesktopFormTitleLabel = new System.Windows.Forms.Label();
+            this.DesktopFormDescription = new System.Windows.Forms.Label();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DesktopFormBackground)).BeginInit();
             this.SuspendLayout();
@@ -106,29 +107,43 @@ namespace CST4708_Project
             this.DesktopFormBackground.TabIndex = 5;
             this.DesktopFormBackground.TabStop = false;
             // 
-            // LaptopFormGoBackButton
+            // DesktopFormTitleLabel
             // 
-            this.LaptopFormGoBackButton.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.LaptopFormGoBackButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.LaptopFormGoBackButton.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.LaptopFormGoBackButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.LaptopFormGoBackButton.Location = new System.Drawing.Point(36, 175);
-            this.LaptopFormGoBackButton.Name = "LaptopFormGoBackButton";
-            this.LaptopFormGoBackButton.Size = new System.Drawing.Size(121, 28);
-            this.LaptopFormGoBackButton.TabIndex = 6;
-            this.LaptopFormGoBackButton.Text = "Go Back";
-            this.LaptopFormGoBackButton.UseVisualStyleBackColor = false;
+            this.DesktopFormTitleLabel.AutoSize = true;
+            this.DesktopFormTitleLabel.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.DesktopFormTitleLabel.Font = new System.Drawing.Font("Times New Roman", 36F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
+            this.DesktopFormTitleLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.DesktopFormTitleLabel.Location = new System.Drawing.Point(344, 95);
+            this.DesktopFormTitleLabel.Name = "DesktopFormTitleLabel";
+            this.DesktopFormTitleLabel.Size = new System.Drawing.Size(472, 67);
+            this.DesktopFormTitleLabel.TabIndex = 9;
+            this.DesktopFormTitleLabel.Text = "Desktop Selection";
+            // 
+            // DesktopFormDescription
+            // 
+            this.DesktopFormDescription.AutoSize = true;
+            this.DesktopFormDescription.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.DesktopFormDescription.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
+            this.DesktopFormDescription.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.DesktopFormDescription.Location = new System.Drawing.Point(303, 197);
+            this.DesktopFormDescription.Name = "DesktopFormDescription";
+            this.DesktopFormDescription.Size = new System.Drawing.Size(553, 34);
+            this.DesktopFormDescription.TabIndex = 10;
+            this.DesktopFormDescription.Text = "View our inventory of desktop products here!";
             // 
             // DesktopForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1209, 662);
-            this.Controls.Add(this.LaptopFormGoBackButton);
+            this.Controls.Add(this.DesktopFormDescription);
+            this.Controls.Add(this.DesktopFormTitleLabel);
             this.Controls.Add(this.DesktopFormBackground);
             this.Controls.Add(this.menuStrip);
             this.Name = "DesktopForm";
             this.Text = "DesktopForm";
+            this.Load += new System.EventHandler(this.DesktopForm_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.DesktopForm_Paint);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
@@ -148,6 +163,7 @@ namespace CST4708_Project
         private ToolStripMenuItem desktopToolStrip;
         private ToolStripMenuItem homeToolStrip;
         private PictureBox DesktopFormBackground;
-        private Button LaptopFormGoBackButton;
+        private Label DesktopFormTitleLabel;
+        private Label DesktopFormDescription;
     }
 }
