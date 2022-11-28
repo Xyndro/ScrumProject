@@ -29,6 +29,18 @@ namespace CST4708_Project
             LandingFormPeripheralsLabel.Parent = LandingFormBackground;
             LandingFormPeripheralsLabel.BackColor = Color.Transparent;
 
+            FeaturedDesktopNameLabel.Parent = LandingFormBackground;
+            FeaturedDesktopNameLabel.BackColor = Color.Transparent;
+
+            FeaturedLaptopNameLabel.Parent = LandingFormBackground;
+            FeaturedLaptopNameLabel.BackColor = Color.Transparent;
+
+            FeaturedMonitorNameLabel.Parent = LandingFormBackground;
+            FeaturedMonitorNameLabel.BackColor = Color.Transparent;
+
+            FeaturedPeripheralNameLabel.Parent = LandingFormBackground;
+            FeaturedPeripheralNameLabel.BackColor = Color.Transparent;
+
         }
 
         //LandingFormBackground -> creates our symbol on the picture box using graphics object
@@ -114,6 +126,27 @@ namespace CST4708_Project
             PeripheralForm peripheral = new PeripheralForm();
             peripheral.Show();
             Visible = false;
+        }
+
+        //Methods to see featured products
+        private void FeaturedDesktopButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FeaturedLaptopButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FeaturedMonitorButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FeaturedPeripheralButton_Click(object sender, EventArgs e)
+        {
+
         }
 
         //---------------------------------------------------------------------------------------
