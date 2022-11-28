@@ -32,5 +32,48 @@ namespace CST4708_Project
             DesktopFormTitleLabel.Parent = DesktopFormBackground;
             DesktopFormTitleLabel.BackColor = Color.Transparent;
         }
+
+        //methods for navigation
+        private void homeToolStrip_Click(object sender, EventArgs e)
+        {
+            LandingForm home = new LandingForm();
+            home.Show();
+            Visible = false;
+        }
+
+        private void desktopToolStrip_Click(object sender, EventArgs e)
+        {
+            DesktopForm desktop = new DesktopForm();
+            desktop.Show();
+            Visible = false;
+        }
+
+        private void laptopToolStrip_Click(object sender, EventArgs e)
+        {
+            LaptopForm laptop = new LaptopForm();
+            laptop.Show();
+            Visible = false;
+        }
+
+        private void monitorToolStrip_Click(object sender, EventArgs e)
+        {
+            MonitorForm monitor = new MonitorForm();
+            monitor.Show();
+            Visible = false;
+        }
+
+        private void peripheralToolStrip_Click(object sender, EventArgs e)
+        {
+            PeripheralForm peripheral = new PeripheralForm();
+            peripheral.Show();
+            Visible = false;
+        }
+
+        private void logInToolStrip_Click(object sender, EventArgs e)
+        {
+            LogInForm logIn = new LogInForm();
+            logIn.Show();
+            Visible = false;
+        }
     }
 }
