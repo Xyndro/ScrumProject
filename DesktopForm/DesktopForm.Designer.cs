@@ -38,11 +38,16 @@ namespace CST4708_Project
             this.DesktopFormBackground = new System.Windows.Forms.PictureBox();
             this.DesktopFormTitleLabel = new System.Windows.Forms.Label();
             this.DesktopFormDescription = new System.Windows.Forms.Label();
-            this.DesktopProductsFlowLayout = new System.Windows.Forms.FlowLayoutPanel();
             this.cartPhoto = new System.Windows.Forms.PictureBox();
+            this.DesktopDataGridView = new System.Windows.Forms.DataGridView();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewImageColumn();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DesktopFormBackground)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cartPhoto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DesktopDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -123,7 +128,7 @@ namespace CST4708_Project
             this.DesktopFormTitleLabel.Font = new System.Drawing.Font("Times New Roman", 36F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
             this.DesktopFormTitleLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.DesktopFormTitleLabel.Location = new System.Drawing.Point(438, 76);
+            this.DesktopFormTitleLabel.Location = new System.Drawing.Point(438, 64);
             this.DesktopFormTitleLabel.Name = "DesktopFormTitleLabel";
             this.DesktopFormTitleLabel.Size = new System.Drawing.Size(472, 67);
             this.DesktopFormTitleLabel.TabIndex = 9;
@@ -135,19 +140,11 @@ namespace CST4708_Project
             this.DesktopFormDescription.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.DesktopFormDescription.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
             this.DesktopFormDescription.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.DesktopFormDescription.Location = new System.Drawing.Point(391, 154);
+            this.DesktopFormDescription.Location = new System.Drawing.Point(391, 162);
             this.DesktopFormDescription.Name = "DesktopFormDescription";
             this.DesktopFormDescription.Size = new System.Drawing.Size(553, 34);
             this.DesktopFormDescription.TabIndex = 10;
             this.DesktopFormDescription.Text = "View our inventory of desktop products here!";
-            // 
-            // DesktopProductsFlowLayout
-            // 
-            this.DesktopProductsFlowLayout.AutoScroll = true;
-            this.DesktopProductsFlowLayout.Location = new System.Drawing.Point(36, 211);
-            this.DesktopProductsFlowLayout.Name = "DesktopProductsFlowLayout";
-            this.DesktopProductsFlowLayout.Size = new System.Drawing.Size(1231, 570);
-            this.DesktopProductsFlowLayout.TabIndex = 24;
             // 
             // cartPhoto
             // 
@@ -157,14 +154,64 @@ namespace CST4708_Project
             this.cartPhoto.Size = new System.Drawing.Size(125, 96);
             this.cartPhoto.TabIndex = 25;
             this.cartPhoto.TabStop = false;
+            this.cartPhoto.Click += new System.EventHandler(this.cartPhoto_Click);
+            // 
+            // DesktopDataGridView
+            // 
+            this.DesktopDataGridView.AllowUserToAddRows = false;
+            this.DesktopDataGridView.AllowUserToResizeColumns = false;
+            this.DesktopDataGridView.AllowUserToResizeRows = false;
+            this.DesktopDataGridView.BackgroundColor = System.Drawing.SystemColors.MenuHighlight;
+            this.DesktopDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DesktopDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column4,
+            this.Column6,
+            this.Column2,
+            this.Column3});
+            this.DesktopDataGridView.Location = new System.Drawing.Point(12, 211);
+            this.DesktopDataGridView.Name = "DesktopDataGridView";
+            this.DesktopDataGridView.RowHeadersWidth = 51;
+            this.DesktopDataGridView.RowTemplate.Height = 29;
+            this.DesktopDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DesktopDataGridView.Size = new System.Drawing.Size(1278, 589);
+            this.DesktopDataGridView.TabIndex = 26;
+            // 
+            // Column4
+            // 
+            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column4.HeaderText = "Desktop Name";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Manufacturer";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.Width = 125;
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column2.HeaderText = "Desktop Price";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 129;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Desktop Image";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 125;
             // 
             // DesktopForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1302, 812);
+            this.Controls.Add(this.DesktopDataGridView);
             this.Controls.Add(this.cartPhoto);
-            this.Controls.Add(this.DesktopProductsFlowLayout);
             this.Controls.Add(this.DesktopFormDescription);
             this.Controls.Add(this.DesktopFormTitleLabel);
             this.Controls.Add(this.DesktopFormBackground);
@@ -177,6 +224,7 @@ namespace CST4708_Project
             this.menuStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DesktopFormBackground)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cartPhoto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DesktopDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -194,7 +242,11 @@ namespace CST4708_Project
         private PictureBox DesktopFormBackground;
         private Label DesktopFormTitleLabel;
         private Label DesktopFormDescription;
-        private FlowLayoutPanel DesktopProductsFlowLayout;
         private PictureBox cartPhoto;
+        private DataGridView DesktopDataGridView;
+        private DataGridViewTextBoxColumn Column4;
+        private DataGridViewTextBoxColumn Column6;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewImageColumn Column3;
     }
 }
