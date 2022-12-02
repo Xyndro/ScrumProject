@@ -1,252 +1,227 @@
+using Microsoft.VisualBasic.ApplicationServices;
+using System;
+using System.Data;
+using System.Data.SqlClient;
 namespace CST4708_Project
 {
-    partial class DesktopForm
+    public partial class LandingForm : Form
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        SqlConnection myConn;
+        SqlCommand myCmd;
+        SqlDataReader myDataReader;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
+        public LandingForm()
         {
-            if (disposing && (components != null))
+            InitializeComponent();
+        }
+
+        //LandingForm_Load -> Upon loading, labels become transparent to blend in with background picture box
+        //Spaces seperate each element on form
+        private void LandingForm_Load(object sender, EventArgs e)
+        {
+            LandingFormTitleLabel.Parent = LandingFormBackground;
+            LandingFormTitleLabel.BackColor = Color.Transparent;
+
+            LandingFormDescription.Parent = LandingFormBackground;
+            LandingFormDescription.BackColor = Color.Transparent;
+
+            LandingFormDesktopsLabel.Parent = LandingFormBackground;
+            LandingFormDesktopsLabel.BackColor = Color.Transparent;
+
+            LandingFormLaptopsLabel.Parent = LandingFormBackground;
+            LandingFormLaptopsLabel.BackColor = Color.Transparent;
+
+            LandingFormMonitorsLabel.Parent = LandingFormBackground;
+            LandingFormMonitorsLabel.BackColor = Color.Transparent;
+
+            LandingFormPeripheralsLabel.Parent = LandingFormBackground;
+            LandingFormPeripheralsLabel.BackColor = Color.Transparent;
+
+            DesktopNameDisplay();
+            LaptopNameDisplay();
+            MonitorNameDisplay();
+            PeripheralNameDisplay();
+
+        }
+
+        public void DesktopNameDisplay()
+        {
+            //sql connection to fill in label with database information
+            myConn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\xyndr\\source\\repos\\CST4708_Project\\CST4708_Database.mdf;Integrated Security=True;Connect Timeout=30");
+            myConn.Open();
+            String desktopLabelQuery = "Select DesktopName From Desktop Where DesktopName = 'XPS Desktop'";
+            myCmd = new SqlCommand(desktopLabelQuery, myConn);
+            myDataReader = myCmd.ExecuteReader();
+
+            while (myDataReader.Read())
             {
-                components.Dispose();
+                DesktopFeature.Text = myDataReader.GetValue(0).ToString();
             }
-            base.Dispose(disposing);
+            myConn.Close();
         }
 
-        #region Windows Form Designer generated code
-
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent()
+        public void LaptopNameDisplay()
         {
-            this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.logInToolStrip = new System.Windows.Forms.ToolStripMenuItem();
-            this.peripheralToolStrip = new System.Windows.Forms.ToolStripMenuItem();
-            this.monitorToolStrip = new System.Windows.Forms.ToolStripMenuItem();
-            this.laptopToolStrip = new System.Windows.Forms.ToolStripMenuItem();
-            this.desktopToolStrip = new System.Windows.Forms.ToolStripMenuItem();
-            this.homeToolStrip = new System.Windows.Forms.ToolStripMenuItem();
-            this.DesktopFormBackground = new System.Windows.Forms.PictureBox();
-            this.DesktopFormTitleLabel = new System.Windows.Forms.Label();
-            this.DesktopFormDescription = new System.Windows.Forms.Label();
-            this.cartPhoto = new System.Windows.Forms.PictureBox();
-            this.DesktopDataGridView = new System.Windows.Forms.DataGridView();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.menuStrip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DesktopFormBackground)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cartPhoto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DesktopDataGridView)).BeginInit();
-            this.SuspendLayout();
-            // 
-            // menuStrip
-            // 
-            this.menuStrip.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.menuStrip.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.menuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.logInToolStrip,
-            this.peripheralToolStrip,
-            this.monitorToolStrip,
-            this.laptopToolStrip,
-            this.desktopToolStrip,
-            this.homeToolStrip});
-            this.menuStrip.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip.Name = "menuStrip";
-            this.menuStrip.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.menuStrip.Size = new System.Drawing.Size(1302, 28);
-            this.menuStrip.TabIndex = 4;
-            this.menuStrip.Text = "menuStrip";
-            // 
-            // logInToolStrip
-            // 
-            this.logInToolStrip.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.logInToolStrip.Name = "logInToolStrip";
-            this.logInToolStrip.Size = new System.Drawing.Size(76, 24);
-            this.logInToolStrip.Text = "Log In";
-            this.logInToolStrip.Click += new System.EventHandler(this.logInToolStrip_Click);
-            // 
-            // peripheralToolStrip
-            // 
-            this.peripheralToolStrip.Name = "peripheralToolStrip";
-            this.peripheralToolStrip.Size = new System.Drawing.Size(103, 24);
-            this.peripheralToolStrip.Text = "Peripherals";
-            this.peripheralToolStrip.Click += new System.EventHandler(this.peripheralToolStrip_Click);
-            // 
-            // monitorToolStrip
-            // 
-            this.monitorToolStrip.Name = "monitorToolStrip";
-            this.monitorToolStrip.Size = new System.Drawing.Size(88, 24);
-            this.monitorToolStrip.Text = "Monitors";
-            this.monitorToolStrip.Click += new System.EventHandler(this.monitorToolStrip_Click);
-            // 
-            // laptopToolStrip
-            // 
-            this.laptopToolStrip.Name = "laptopToolStrip";
-            this.laptopToolStrip.Size = new System.Drawing.Size(81, 24);
-            this.laptopToolStrip.Text = "Laptops";
-            this.laptopToolStrip.Click += new System.EventHandler(this.laptopToolStrip_Click);
-            // 
-            // desktopToolStrip
-            // 
-            this.desktopToolStrip.Name = "desktopToolStrip";
-            this.desktopToolStrip.Size = new System.Drawing.Size(90, 24);
-            this.desktopToolStrip.Text = "Desktops";
-            this.desktopToolStrip.Click += new System.EventHandler(this.desktopToolStrip_Click);
-            // 
-            // homeToolStrip
-            // 
-            this.homeToolStrip.Name = "homeToolStrip";
-            this.homeToolStrip.Size = new System.Drawing.Size(67, 24);
-            this.homeToolStrip.Text = "Home";
-            this.homeToolStrip.Click += new System.EventHandler(this.homeToolStrip_Click);
-            // 
-            // DesktopFormBackground
-            // 
-            this.DesktopFormBackground.Image = global::CST4708_Project.Properties.Resources.formBackground;
-            this.DesktopFormBackground.Location = new System.Drawing.Point(0, 25);
-            this.DesktopFormBackground.Name = "DesktopFormBackground";
-            this.DesktopFormBackground.Size = new System.Drawing.Size(1302, 790);
-            this.DesktopFormBackground.TabIndex = 5;
-            this.DesktopFormBackground.TabStop = false;
-            // 
-            // DesktopFormTitleLabel
-            // 
-            this.DesktopFormTitleLabel.AutoSize = true;
-            this.DesktopFormTitleLabel.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.DesktopFormTitleLabel.Font = new System.Drawing.Font("Times New Roman", 36F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
-                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.DesktopFormTitleLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.DesktopFormTitleLabel.Location = new System.Drawing.Point(438, 64);
-            this.DesktopFormTitleLabel.Name = "DesktopFormTitleLabel";
-            this.DesktopFormTitleLabel.Size = new System.Drawing.Size(472, 67);
-            this.DesktopFormTitleLabel.TabIndex = 9;
-            this.DesktopFormTitleLabel.Text = "Desktop Selection";
-            // 
-            // DesktopFormDescription
-            // 
-            this.DesktopFormDescription.AutoSize = true;
-            this.DesktopFormDescription.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.DesktopFormDescription.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
-            this.DesktopFormDescription.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.DesktopFormDescription.Location = new System.Drawing.Point(391, 162);
-            this.DesktopFormDescription.Name = "DesktopFormDescription";
-            this.DesktopFormDescription.Size = new System.Drawing.Size(553, 34);
-            this.DesktopFormDescription.TabIndex = 10;
-            this.DesktopFormDescription.Text = "View our inventory of desktop products here!";
-            // 
-            // cartPhoto
-            // 
-            this.cartPhoto.Image = global::CST4708_Project.Properties.Resources.cartPhoto;
-            this.cartPhoto.Location = new System.Drawing.Point(1165, 47);
-            this.cartPhoto.Name = "cartPhoto";
-            this.cartPhoto.Size = new System.Drawing.Size(125, 96);
-            this.cartPhoto.TabIndex = 25;
-            this.cartPhoto.TabStop = false;
-            this.cartPhoto.Click += new System.EventHandler(this.cartPhoto_Click);
-            // 
-            // DesktopDataGridView
-            // 
-            this.DesktopDataGridView.AllowUserToAddRows = false;
-            this.DesktopDataGridView.AllowUserToResizeColumns = false;
-            this.DesktopDataGridView.AllowUserToResizeRows = false;
-            this.DesktopDataGridView.BackgroundColor = System.Drawing.SystemColors.MenuHighlight;
-            this.DesktopDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DesktopDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column4,
-            this.Column6,
-            this.Column2,
-            this.Column3});
-            this.DesktopDataGridView.Location = new System.Drawing.Point(12, 211);
-            this.DesktopDataGridView.Name = "DesktopDataGridView";
-            this.DesktopDataGridView.RowHeadersWidth = 51;
-            this.DesktopDataGridView.RowTemplate.Height = 29;
-            this.DesktopDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DesktopDataGridView.Size = new System.Drawing.Size(1278, 589);
-            this.DesktopDataGridView.TabIndex = 26;
-            // 
-            // Column4
-            // 
-            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column4.HeaderText = "Desktop Name";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Manufacturer";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 125;
-            // 
-            // Column2
-            // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column2.HeaderText = "Desktop Price";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 129;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Desktop Image";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 125;
-            // 
-            // DesktopForm
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1302, 812);
-            this.Controls.Add(this.DesktopDataGridView);
-            this.Controls.Add(this.cartPhoto);
-            this.Controls.Add(this.DesktopFormDescription);
-            this.Controls.Add(this.DesktopFormTitleLabel);
-            this.Controls.Add(this.DesktopFormBackground);
-            this.Controls.Add(this.menuStrip);
-            this.Name = "DesktopForm";
-            this.Text = "DesktopForm";
-            this.Load += new System.EventHandler(this.DesktopForm_Load);
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.DesktopForm_Paint);
-            this.menuStrip.ResumeLayout(false);
-            this.menuStrip.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DesktopFormBackground)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cartPhoto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DesktopDataGridView)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            //sql connection to fill in label with database information
+            myConn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\xyndr\\source\\repos\\CST4708_Project\\CST4708_Database.mdf;Integrated Security=True;Connect Timeout=30");
+            myConn.Open();
+            String laptopLabelQuery = "Select LaptopName From Laptop Where LaptopName = 'TUF Gaming Laptop'";
+            myCmd = new SqlCommand(laptopLabelQuery, myConn);
+            myDataReader = myCmd.ExecuteReader();
+
+            while (myDataReader.Read())
+            {
+                LaptopFeature.Text = myDataReader.GetValue(0).ToString();
+            }
+            myConn.Close();
+        }
+
+        public void MonitorNameDisplay()
+        {
+            //sql connection to fill in label with database information
+            myConn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\xyndr\\source\\repos\\CST4708_Project\\CST4708_Database.mdf;Integrated Security=True;Connect Timeout=30");
+            myConn.Open();
+            String monitorLabelQuery = "Select MonitorName From Monitor Where MonitorName = 'LED FHD FreeSync HDMI Monitor'";
+            myCmd = new SqlCommand(monitorLabelQuery, myConn);
+            myDataReader = myCmd.ExecuteReader();
+
+            while (myDataReader.Read())
+            {
+                MonitorFeature.Text = myDataReader.GetValue(0).ToString();
+            }
+            myConn.Close();
+        }
+
+
+        public void PeripheralNameDisplay()
+        {
+            //sql connection to fill in label with database information
+            myConn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\xyndr\\source\\repos\\CST4708_Project\\CST4708_Database.mdf;Integrated Security=True;Connect Timeout=30");
+            myConn.Open();
+            String peripheralLabelQuery = "Select PeripheralName From Peripheral Where PeripheralName = 'PULSE 3D Wireless Headset'";
+            myCmd = new SqlCommand(peripheralLabelQuery, myConn);
+            myDataReader = myCmd.ExecuteReader();
+
+            while (myDataReader.Read())
+            {
+                PeripheralFeature.Text = myDataReader.GetValue(0).ToString();
+            }
+            myConn.Close();
+        }
+
+        //LandingFormBackground -> creates our symbol on the picture box using graphics object
+        //Graphic located at top left of form under menu strip
+        private void LandingFormBackground_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics graphic = e.Graphics;
+            SolidBrush orangeBrush = new SolidBrush(Color.Orange);
+            SolidBrush blueBrush = new SolidBrush(Color.Blue);
+
+            graphic.FillRectangle(orangeBrush, 20, 20, 90, 80);
+            graphic.FillRectangle(blueBrush, 39, 40, 52, 40);
+        }
+
+
+        //methods below are click events for navigation
+        //---------------------------------------------------------------------------------------
+        private void homeToolStrip_Click(object sender, EventArgs e)
+        {
+            LandingForm home = new LandingForm();
+            home.Show();
+            Visible = false;
+        }
+
+        private void desktopToolStrip_Click(object sender, EventArgs e)
+        {
+            DesktopForm desktop = new DesktopForm();
+            desktop.Show();
+            Visible = false; 
+        }
+
+        private void laptopToolStrip_Click(object sender, EventArgs e)
+        {
+            LaptopForm laptop = new LaptopForm();
+            laptop.Show();
+            Visible = false;
+        }
+
+        private void monitorToolStrip_Click(object sender, EventArgs e)
+        {
+            MonitorForm monitor = new MonitorForm();
+            monitor.Show();
+            Visible = false;
+        }
+
+        private void peripheralToolStrip_Click(object sender, EventArgs e)
+        {
+            PeripheralForm peripheral = new PeripheralForm();
+            peripheral.Show();
+            Visible = false;
+        }
+
+        private void logInToolStrip_Click(object sender, EventArgs e)
+        {
+            LogInForm logIn = new LogInForm();
+            logIn.Show();
+            Visible = false;
+        }
+
+        private void LandingFormToDesktopsButton_Click(object sender, EventArgs e)
+        {
+            DesktopForm desktop = new DesktopForm();
+            desktop.Show();
+            Visible = false;
+        }
+
+        private void LandingFormToLaptopsButton_Click(object sender, EventArgs e)
+        {
+            LaptopForm laptop = new LaptopForm();
+            laptop.Show();
+            Visible = false;
+        }
+
+        private void LandingFormToMonitorsButton_Click(object sender, EventArgs e)
+        {
+            MonitorForm monitor = new MonitorForm();
+            monitor.Show();
+            Visible = false;
+        }
+
+        private void LandingFormToPeripheralsButton_Click(object sender, EventArgs e)
+        {
+            PeripheralForm peripheral = new PeripheralForm();
+            peripheral.Show();
+            Visible = false;
+        }
+
+        //Methods to see featured products
+        private void FeaturedDesktopButton_Click(object sender, EventArgs e)
+        {
 
         }
 
-        #endregion
+        private void FeaturedLaptopButton_Click(object sender, EventArgs e)
+        {
 
-        private MenuStrip menuStrip;
-        private ToolStripMenuItem logInToolStrip;
-        private ToolStripMenuItem peripheralToolStrip;
-        private ToolStripMenuItem monitorToolStrip;
-        private ToolStripMenuItem laptopToolStrip;
-        private ToolStripMenuItem desktopToolStrip;
-        private ToolStripMenuItem homeToolStrip;
-        private PictureBox DesktopFormBackground;
-        private Label DesktopFormTitleLabel;
-        private Label DesktopFormDescription;
-        private PictureBox cartPhoto;
-        private DataGridView DesktopDataGridView;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridViewTextBoxColumn Column6;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewImageColumn Column3;
+        }
+
+        private void FeaturedMonitorButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FeaturedPeripheralButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cartPhoto_Click(object sender, EventArgs e)
+        {
+            CartView cart = new CartView();
+            cart.Show();
+            Visible = false;
+        }
+
+        //---------------------------------------------------------------------------------------
     }
 }
