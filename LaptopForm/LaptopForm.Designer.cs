@@ -38,11 +38,16 @@ namespace CST4708_Project
             this.homeToolStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.LaptopFormTitleLabel = new System.Windows.Forms.Label();
             this.LaptopFormDescription = new System.Windows.Forms.Label();
-            this.LaptopProductsFlowLayout = new System.Windows.Forms.FlowLayoutPanel();
             this.cartPhoto = new System.Windows.Forms.PictureBox();
+            this.LaptopDataGridView = new System.Windows.Forms.DataGridView();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.LaptopFormBackground)).BeginInit();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cartPhoto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LaptopDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // LaptopFormBackground
@@ -141,14 +146,6 @@ namespace CST4708_Project
             this.LaptopFormDescription.TabIndex = 11;
             this.LaptopFormDescription.Text = "View our inventory of laptop products here!";
             // 
-            // LaptopProductsFlowLayout
-            // 
-            this.LaptopProductsFlowLayout.AutoScroll = true;
-            this.LaptopProductsFlowLayout.Location = new System.Drawing.Point(41, 210);
-            this.LaptopProductsFlowLayout.Name = "LaptopProductsFlowLayout";
-            this.LaptopProductsFlowLayout.Size = new System.Drawing.Size(1231, 570);
-            this.LaptopProductsFlowLayout.TabIndex = 23;
-            // 
             // cartPhoto
             // 
             this.cartPhoto.Image = global::CST4708_Project.Properties.Resources.cartPhoto;
@@ -157,6 +154,56 @@ namespace CST4708_Project
             this.cartPhoto.Size = new System.Drawing.Size(125, 96);
             this.cartPhoto.TabIndex = 24;
             this.cartPhoto.TabStop = false;
+            this.cartPhoto.Click += new System.EventHandler(this.cartPhoto_Click);
+            // 
+            // LaptopDataGridView
+            // 
+            this.LaptopDataGridView.AllowUserToAddRows = false;
+            this.LaptopDataGridView.AllowUserToResizeColumns = false;
+            this.LaptopDataGridView.AllowUserToResizeRows = false;
+            this.LaptopDataGridView.BackgroundColor = System.Drawing.SystemColors.MenuHighlight;
+            this.LaptopDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.LaptopDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column4,
+            this.Column6,
+            this.Column2,
+            this.Column3});
+            this.LaptopDataGridView.Location = new System.Drawing.Point(12, 197);
+            this.LaptopDataGridView.Name = "LaptopDataGridView";
+            this.LaptopDataGridView.RowHeadersWidth = 51;
+            this.LaptopDataGridView.RowTemplate.Height = 29;
+            this.LaptopDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.LaptopDataGridView.Size = new System.Drawing.Size(1278, 589);
+            this.LaptopDataGridView.TabIndex = 27;
+            // 
+            // Column4
+            // 
+            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column4.HeaderText = "Laptop Name";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Manufacturer";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.Width = 125;
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column2.HeaderText = "Laptop Price";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 121;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Laptop Image";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 125;
             // 
             // LaptopForm
             // 
@@ -164,19 +211,21 @@ namespace CST4708_Project
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1302, 812);
+            this.Controls.Add(this.LaptopDataGridView);
             this.Controls.Add(this.cartPhoto);
-            this.Controls.Add(this.LaptopProductsFlowLayout);
             this.Controls.Add(this.LaptopFormDescription);
             this.Controls.Add(this.LaptopFormTitleLabel);
             this.Controls.Add(this.menuStrip);
             this.Controls.Add(this.LaptopFormBackground);
             this.Name = "LaptopForm";
             this.Text = "LaptopForm";
+            this.Load += new System.EventHandler(this.LaptopForm_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.LaptopForm_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.LaptopFormBackground)).EndInit();
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cartPhoto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LaptopDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,7 +242,11 @@ namespace CST4708_Project
         private ToolStripMenuItem homeToolStrip;
         private Label LaptopFormTitleLabel;
         private Label LaptopFormDescription;
-        private FlowLayoutPanel LaptopProductsFlowLayout;
         private PictureBox cartPhoto;
+        private DataGridView LaptopDataGridView;
+        private DataGridViewTextBoxColumn Column4;
+        private DataGridViewTextBoxColumn Column6;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewImageColumn Column3;
     }
 }
