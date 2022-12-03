@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Common;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,9 +14,51 @@ namespace CST4708_Project
 {
     public partial class PeripheralForm : Form
     {
+
+        SqlConnection myConn;
+        SqlCommand myCmd;
+        SqlDataReader myDataReader;
+
         public PeripheralForm()
         {
             InitializeComponent();
+        }
+
+        private void PeripheralForm_Load(object sender, EventArgs e)
+        {
+            PeripheralFormTitleLabel.Parent = PeripheralFormBackground;
+            PeripheralFormTitleLabel.BackColor = Color.Transparent;
+
+            PeripheralFormDescription.Parent = PeripheralFormBackground;
+            PeripheralFormDescription.BackColor = Color.Transparent;
+
+            fillPeripheralDataGridView();
+        }
+
+        public void fillPeripheralDataGridView()
+        {
+            PeripheralDataGridView.Rows.Clear();
+            myConn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\xyndr\\source\\repos\\CST4708_Project\\CST4708_Database.mdf;Integrated Security=True;Connect Timeout=30");
+            myConn.Open();
+
+            myCmd = new SqlCommand("Select * from Peripheral", myConn);
+            myDataReader = myCmd.ExecuteReader();
+
+            while (myDataReader.Read())
+            {
+                PeripheralDataGridView.Rows.Add(myDataReader["PeripheralName"].ToString(),
+                                             myDataReader["PeripheralPrice"].ToString(), myDataReader["PeripheralImage"]);
+            }
+
+            myDataReader.Close();
+            myConn.Close();
+
+            //stretches dataGridView for spacing between one item to the next
+            for (int i = 0; i < PeripheralDataGridView.Rows.Count; i++)
+            {
+                DataGridViewRow dgvr = PeripheralDataGridView.Rows[i];
+                dgvr.Height = 50;
+            }
         }
 
         private void PeripheralForm_Paint(object sender, PaintEventArgs e)
@@ -67,6 +111,13 @@ namespace CST4708_Project
         {
             LogInForm logIn = new LogInForm();
             logIn.Show();
+            Visible = false;
+        }
+
+        private void cartPhoto_Click(object sender, EventArgs e)
+        {
+            CartView cart = new CartView();
+            cart.Show();
             Visible = false;
         }
     }
