@@ -17,6 +17,33 @@ namespace CST4708_Project
             InitializeComponent();
         }
 
+        private void ProductView_Load(object sender, EventArgs e)
+        {
+            ProductViewLabel.Parent = ProductViewBackground;
+            ProductViewLabel.BackColor = Color.Transparent;
+
+            ProductViewSKU.Parent = ProductViewBackground;
+            ProductViewSKU.BackColor = Color.Transparent;
+
+            ProductViewName.Parent = ProductViewBackground;
+            ProductViewName.BackColor = Color.Transparent;
+
+            ProductViewManufacturer.Parent = ProductViewBackground;
+            ProductViewManufacturer.BackColor = Color.Transparent;
+
+            ProductViewCPU.Parent = ProductViewBackground;
+            ProductViewCPU.BackColor = Color.Transparent;
+
+            ProductViewStorage.Parent = ProductViewBackground;
+            ProductViewStorage.BackColor = Color.Transparent;
+
+            ProductViewPrice.Parent = ProductViewBackground;
+            ProductViewPrice.BackColor = Color.Transparent;
+
+            ProductViewDescription.Parent = ProductViewBackground;
+            ProductViewDescription.BackColor = Color.Transparent;
+        }
+
         //ProductView_Paint -> creates our symbol in the form using graphics object
         private void ProductView_Paint(object sender, PaintEventArgs e)
         {
@@ -68,6 +95,13 @@ namespace CST4708_Project
         {
             LogInForm logIn = new LogInForm();
             logIn.Show();
+            Visible = false;
+        }
+
+        private void cartPhoto_Click(object sender, EventArgs e)
+        {
+            CartView cart = new CartView();
+            cart.Show();
             Visible = false;
         }
     }
