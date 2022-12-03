@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Common;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,9 +14,51 @@ namespace CST4708_Project
 {
     public partial class MonitorForm : Form
     {
+
+        SqlConnection myConn;
+        SqlCommand myCmd;
+        SqlDataReader myDataReader;
+
         public MonitorForm()
         {
             InitializeComponent();
+        }
+
+        private void MonitorForm_Load(object sender, EventArgs e)
+        {
+            MonitorFormTitleLabel.Parent = MonitorFormBackground;
+            MonitorFormTitleLabel.BackColor = Color.Transparent;
+
+            MonitorFormDescription.Parent = MonitorFormBackground;
+            MonitorFormDescription.BackColor = Color.Transparent;
+
+            fillMonitorGridView();
+        }
+
+        public void fillMonitorGridView()
+        {
+            MonitorDataGridView.Rows.Clear();
+            myConn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\xyndr\\source\\repos\\CST4708_Project\\CST4708_Database.mdf;Integrated Security=True;Connect Timeout=30");
+            myConn.Open();
+
+            myCmd = new SqlCommand("Select * from Monitor", myConn);
+            myDataReader = myCmd.ExecuteReader();
+
+            while (myDataReader.Read())
+            {
+                MonitorDataGridView.Rows.Add(myDataReader["MonitorName"].ToString(), myDataReader["MonitorManufacturer"].ToString(),
+                                             myDataReader["MonitorPrice"].ToString(), myDataReader["MonitorImage"]);
+            }
+
+            myDataReader.Close();
+            myConn.Close();
+
+            //stretches dataGridView for spacing between one item to the next
+            for (int i = 0; i < MonitorDataGridView.Rows.Count; i++)
+            {
+                DataGridViewRow dgvr = MonitorDataGridView.Rows[i];
+                dgvr.Height = 50;
+            }
         }
 
         //MonitorFormBackground -> creates our symbol on the picture box using graphics object
@@ -69,6 +113,13 @@ namespace CST4708_Project
         {
             LogInForm logIn = new LogInForm();
             logIn.Show();
+            Visible = false;
+        }
+
+        private void cartPhoto_Click(object sender, EventArgs e)
+        {
+            CartView cart = new CartView();
+            cart.Show();
             Visible = false;
         }
     }
