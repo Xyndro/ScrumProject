@@ -194,6 +194,7 @@ namespace CST4708_Project
             this.Controls.Add(this.menuStrip);
             this.Name = "CartView";
             this.Text = "CartView";
+            this.Load += new System.EventHandler(this.CartView_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.CartView_Paint);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
