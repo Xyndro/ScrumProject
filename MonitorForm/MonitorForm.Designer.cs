@@ -38,11 +38,16 @@ namespace CST4708_Project
             this.MonitorFormBackground = new System.Windows.Forms.PictureBox();
             this.MonitorFormTitleLabel = new System.Windows.Forms.Label();
             this.MonitorFormDescription = new System.Windows.Forms.Label();
-            this.MonitorProductsFlowLayout = new System.Windows.Forms.FlowLayoutPanel();
             this.cartPhoto = new System.Windows.Forms.PictureBox();
+            this.MonitorDataGridView = new System.Windows.Forms.DataGridView();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewImageColumn();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MonitorFormBackground)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cartPhoto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MonitorDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -112,7 +117,7 @@ namespace CST4708_Project
             this.MonitorFormBackground.Image = global::CST4708_Project.Properties.Resources.formBackground;
             this.MonitorFormBackground.Location = new System.Drawing.Point(0, 25);
             this.MonitorFormBackground.Name = "MonitorFormBackground";
-            this.MonitorFormBackground.Size = new System.Drawing.Size(1302, 789);
+            this.MonitorFormBackground.Size = new System.Drawing.Size(1302, 805);
             this.MonitorFormBackground.TabIndex = 6;
             this.MonitorFormBackground.TabStop = false;
             // 
@@ -135,19 +140,11 @@ namespace CST4708_Project
             this.MonitorFormDescription.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.MonitorFormDescription.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
             this.MonitorFormDescription.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.MonitorFormDescription.Location = new System.Drawing.Point(378, 150);
+            this.MonitorFormDescription.Location = new System.Drawing.Point(378, 170);
             this.MonitorFormDescription.Name = "MonitorFormDescription";
             this.MonitorFormDescription.Size = new System.Drawing.Size(553, 34);
             this.MonitorFormDescription.TabIndex = 11;
             this.MonitorFormDescription.Text = "View our inventory of desktop products here!";
-            // 
-            // MonitorProductsFlowLayout
-            // 
-            this.MonitorProductsFlowLayout.AutoScroll = true;
-            this.MonitorProductsFlowLayout.Location = new System.Drawing.Point(34, 206);
-            this.MonitorProductsFlowLayout.Name = "MonitorProductsFlowLayout";
-            this.MonitorProductsFlowLayout.Size = new System.Drawing.Size(1231, 570);
-            this.MonitorProductsFlowLayout.TabIndex = 24;
             // 
             // cartPhoto
             // 
@@ -157,25 +154,77 @@ namespace CST4708_Project
             this.cartPhoto.Size = new System.Drawing.Size(125, 96);
             this.cartPhoto.TabIndex = 25;
             this.cartPhoto.TabStop = false;
+            this.cartPhoto.Click += new System.EventHandler(this.cartPhoto_Click);
+            // 
+            // MonitorDataGridView
+            // 
+            this.MonitorDataGridView.AllowUserToAddRows = false;
+            this.MonitorDataGridView.AllowUserToResizeColumns = false;
+            this.MonitorDataGridView.AllowUserToResizeRows = false;
+            this.MonitorDataGridView.BackgroundColor = System.Drawing.SystemColors.MenuHighlight;
+            this.MonitorDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.MonitorDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column4,
+            this.Column6,
+            this.Column2,
+            this.Column3});
+            this.MonitorDataGridView.Location = new System.Drawing.Point(12, 225);
+            this.MonitorDataGridView.Name = "MonitorDataGridView";
+            this.MonitorDataGridView.RowHeadersWidth = 51;
+            this.MonitorDataGridView.RowTemplate.Height = 29;
+            this.MonitorDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.MonitorDataGridView.Size = new System.Drawing.Size(1278, 589);
+            this.MonitorDataGridView.TabIndex = 27;
+            // 
+            // Column4
+            // 
+            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column4.HeaderText = "Monitor Name";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Manufacturer";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.Width = 125;
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column2.HeaderText = "Monitor Price";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 127;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Monitor Image";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 125;
             // 
             // MonitorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1302, 812);
+            this.ClientSize = new System.Drawing.Size(1302, 826);
+            this.Controls.Add(this.MonitorDataGridView);
             this.Controls.Add(this.cartPhoto);
-            this.Controls.Add(this.MonitorProductsFlowLayout);
             this.Controls.Add(this.MonitorFormDescription);
             this.Controls.Add(this.MonitorFormTitleLabel);
             this.Controls.Add(this.MonitorFormBackground);
             this.Controls.Add(this.menuStrip);
             this.Name = "MonitorForm";
             this.Text = "MonitorForm";
+            this.Load += new System.EventHandler(this.MonitorForm_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.MonitorForm_Paint);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MonitorFormBackground)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cartPhoto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MonitorDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,7 +242,11 @@ namespace CST4708_Project
         private PictureBox MonitorFormBackground;
         private Label MonitorFormTitleLabel;
         private Label MonitorFormDescription;
-        private FlowLayoutPanel MonitorProductsFlowLayout;
         private PictureBox cartPhoto;
+        private DataGridView MonitorDataGridView;
+        private DataGridViewTextBoxColumn Column4;
+        private DataGridViewTextBoxColumn Column6;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewImageColumn Column3;
     }
 }
