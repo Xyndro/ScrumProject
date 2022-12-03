@@ -17,6 +17,12 @@ namespace CST4708_Project
             InitializeComponent();
         }
 
+        private void CartView_Load(object sender, EventArgs e)
+        {
+            CartViewCartLabel.Parent = CartViewBackground;
+            CartViewCartLabel.BackColor = Color.Transparent;
+        }
+
         private void CartView_Paint(object sender, PaintEventArgs e)
         {
             Graphics graphic = e.Graphics;
