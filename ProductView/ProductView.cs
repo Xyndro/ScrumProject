@@ -42,6 +42,24 @@ namespace CST4708_Project
 
             ProductViewDescription.Parent = ProductViewBackground;
             ProductViewDescription.BackColor = Color.Transparent;
+
+            NameLabel.Parent = ProductViewBackground;
+            NameLabel.BackColor = Color.Transparent;
+
+            SKULabel.Parent = ProductViewBackground;
+            SKULabel.BackColor = Color.Transparent;
+
+            ManufacturerLabel.Parent = ProductViewBackground;
+            ManufacturerLabel.BackColor = Color.Transparent;
+
+            CPULabel.Parent = ProductViewBackground;
+            CPULabel.BackColor = Color.Transparent;
+
+            StorageLabel.Parent = ProductViewBackground;
+            StorageLabel.BackColor = Color.Transparent;
+
+            DescriptionLabel.Parent = ProductViewBackground;
+            DescriptionLabel.BackColor = Color.Transparent;
         }
 
         //ProductView_Paint -> creates our symbol in the form using graphics object
