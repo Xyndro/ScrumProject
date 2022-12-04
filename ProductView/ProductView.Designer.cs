@@ -48,6 +48,13 @@ namespace CST4708_Project
             this.ProductViewDescription = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.ProductViewAddToCartButton = new System.Windows.Forms.Button();
+            this.SKULabel = new System.Windows.Forms.Label();
+            this.NameLabel = new System.Windows.Forms.Label();
+            this.ManufacturerLabel = new System.Windows.Forms.Label();
+            this.CPULabel = new System.Windows.Forms.Label();
+            this.StorageLabel = new System.Windows.Forms.Label();
+            this.PriceLabel = new System.Windows.Forms.Label();
+            this.DescriptionLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ProductViewBackground)).BeginInit();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cartPhoto)).BeginInit();
@@ -232,12 +239,82 @@ namespace CST4708_Project
             this.ProductViewAddToCartButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.ProductViewAddToCartButton.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.ProductViewAddToCartButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ProductViewAddToCartButton.Location = new System.Drawing.Point(802, 640);
+            this.ProductViewAddToCartButton.Location = new System.Drawing.Point(774, 640);
             this.ProductViewAddToCartButton.Name = "ProductViewAddToCartButton";
             this.ProductViewAddToCartButton.Size = new System.Drawing.Size(196, 39);
             this.ProductViewAddToCartButton.TabIndex = 32;
             this.ProductViewAddToCartButton.Text = "Add To Cart";
             this.ProductViewAddToCartButton.UseVisualStyleBackColor = false;
+            // 
+            // SKULabel
+            // 
+            this.SKULabel.AutoSize = true;
+            this.SKULabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.SKULabel.Location = new System.Drawing.Point(824, 219);
+            this.SKULabel.Name = "SKULabel";
+            this.SKULabel.Size = new System.Drawing.Size(158, 22);
+            this.SKULabel.TabIndex = 33;
+            this.SKULabel.Text = "Product SKU Here";
+            // 
+            // NameLabel
+            // 
+            this.NameLabel.AutoSize = true;
+            this.NameLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.NameLabel.Location = new System.Drawing.Point(824, 273);
+            this.NameLabel.Name = "NameLabel";
+            this.NameLabel.Size = new System.Drawing.Size(166, 22);
+            this.NameLabel.TabIndex = 34;
+            this.NameLabel.Text = "Product Name Here";
+            // 
+            // ManufacturerLabel
+            // 
+            this.ManufacturerLabel.AutoSize = true;
+            this.ManufacturerLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ManufacturerLabel.Location = new System.Drawing.Point(824, 328);
+            this.ManufacturerLabel.Name = "ManufacturerLabel";
+            this.ManufacturerLabel.Size = new System.Drawing.Size(225, 22);
+            this.ManufacturerLabel.TabIndex = 35;
+            this.ManufacturerLabel.Text = "Product Manufacturer Here";
+            // 
+            // CPULabel
+            // 
+            this.CPULabel.AutoSize = true;
+            this.CPULabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CPULabel.Location = new System.Drawing.Point(824, 378);
+            this.CPULabel.Name = "CPULabel";
+            this.CPULabel.Size = new System.Drawing.Size(157, 22);
+            this.CPULabel.TabIndex = 36;
+            this.CPULabel.Text = "Product CPU Here";
+            // 
+            // StorageLabel
+            // 
+            this.StorageLabel.AutoSize = true;
+            this.StorageLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.StorageLabel.Location = new System.Drawing.Point(824, 429);
+            this.StorageLabel.Name = "StorageLabel";
+            this.StorageLabel.Size = new System.Drawing.Size(180, 22);
+            this.StorageLabel.TabIndex = 37;
+            this.StorageLabel.Text = "Product Storage Here";
+            // 
+            // PriceLabel
+            // 
+            this.PriceLabel.AutoSize = true;
+            this.PriceLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PriceLabel.Location = new System.Drawing.Point(824, 482);
+            this.PriceLabel.Name = "PriceLabel";
+            this.PriceLabel.Size = new System.Drawing.Size(162, 22);
+            this.PriceLabel.TabIndex = 38;
+            this.PriceLabel.Text = "Product Price Here";
+            // 
+            // DescriptionLabel
+            // 
+            this.DescriptionLabel.AutoSize = true;
+            this.DescriptionLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.DescriptionLabel.Location = new System.Drawing.Point(824, 535);
+            this.DescriptionLabel.Name = "DescriptionLabel";
+            this.DescriptionLabel.Size = new System.Drawing.Size(213, 22);
+            this.DescriptionLabel.TabIndex = 39;
+            this.DescriptionLabel.Text = "Product Description Here";
             // 
             // ProductView
             // 
@@ -245,6 +322,13 @@ namespace CST4708_Project
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1234, 722);
+            this.Controls.Add(this.DescriptionLabel);
+            this.Controls.Add(this.PriceLabel);
+            this.Controls.Add(this.StorageLabel);
+            this.Controls.Add(this.CPULabel);
+            this.Controls.Add(this.ManufacturerLabel);
+            this.Controls.Add(this.NameLabel);
+            this.Controls.Add(this.SKULabel);
             this.Controls.Add(this.ProductViewAddToCartButton);
             this.Controls.Add(this.ProductViewDescription);
             this.Controls.Add(this.ProductViewPrice);
@@ -260,6 +344,7 @@ namespace CST4708_Project
             this.Controls.Add(this.ProductViewBackground);
             this.Name = "ProductView";
             this.Text = "ProductView";
+            this.Load += new System.EventHandler(this.ProductView_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.ProductView_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.ProductViewBackground)).EndInit();
             this.menuStrip.ResumeLayout(false);
@@ -292,5 +377,12 @@ namespace CST4708_Project
         private Label ProductViewDescription;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private Button ProductViewAddToCartButton;
+        private Label SKULabel;
+        private Label NameLabel;
+        private Label ManufacturerLabel;
+        private Label CPULabel;
+        private Label StorageLabel;
+        private Label PriceLabel;
+        private Label DescriptionLabel;
     }
 }
