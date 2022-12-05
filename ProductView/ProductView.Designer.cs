@@ -55,6 +55,7 @@ namespace CST4708_Project
             this.StorageLabel = new System.Windows.Forms.Label();
             this.PriceLabel = new System.Windows.Forms.Label();
             this.DescriptionLabel = new System.Windows.Forms.Label();
+            this.LogInStatus = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ProductViewBackground)).BeginInit();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cartPhoto)).BeginInit();
@@ -316,12 +317,24 @@ namespace CST4708_Project
             this.DescriptionLabel.TabIndex = 39;
             this.DescriptionLabel.Text = "Product Description Here";
             // 
+            // LogInStatus
+            // 
+            this.LogInStatus.AutoSize = true;
+            this.LogInStatus.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LogInStatus.Location = new System.Drawing.Point(0, 28);
+            this.LogInStatus.Name = "LogInStatus";
+            this.LogInStatus.Size = new System.Drawing.Size(232, 33);
+            this.LogInStatus.TabIndex = 40;
+            this.LogInStatus.Text = "Logged In As Guest";
+            this.LogInStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // ProductView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1234, 722);
+            this.Controls.Add(this.LogInStatus);
             this.Controls.Add(this.DescriptionLabel);
             this.Controls.Add(this.PriceLabel);
             this.Controls.Add(this.StorageLabel);
@@ -345,7 +358,6 @@ namespace CST4708_Project
             this.Name = "ProductView";
             this.Text = "ProductView";
             this.Load += new System.EventHandler(this.ProductView_Load);
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.ProductView_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.ProductViewBackground)).EndInit();
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
@@ -384,5 +396,6 @@ namespace CST4708_Project
         private Label StorageLabel;
         private Label PriceLabel;
         private Label DescriptionLabel;
+        private Label LogInStatus;
     }
 }
