@@ -37,6 +37,9 @@ namespace CST4708_Project
             LandingFormPeripheralsLabel.Parent = LandingFormBackground;
             LandingFormPeripheralsLabel.BackColor = Color.Transparent;
 
+            LogInStatus.Parent = LandingFormBackground;
+            LogInStatus.BackColor = Color.Transparent;
+
             DesktopNameDisplay();
             LaptopNameDisplay();
             MonitorNameDisplay();
@@ -107,18 +110,6 @@ namespace CST4708_Project
                 PeripheralFeature.Text = myDataReader.GetValue(0).ToString();
             }
             myConn.Close();
-        }
-
-        //LandingFormBackground -> creates our symbol on the picture box using graphics object
-        //Graphic located at top left of form under menu strip
-        private void LandingFormBackground_Paint(object sender, PaintEventArgs e)
-        {
-            Graphics graphic = e.Graphics;
-            SolidBrush orangeBrush = new SolidBrush(Color.Orange);
-            SolidBrush blueBrush = new SolidBrush(Color.Blue);
-
-            graphic.FillRectangle(orangeBrush, 20, 20, 90, 80);
-            graphic.FillRectangle(blueBrush, 39, 40, 52, 40);
         }
 
 
