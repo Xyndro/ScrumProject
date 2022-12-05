@@ -42,6 +42,9 @@ namespace CST4708_Project
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ProceedToCheckoutButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.LogInStatus = new System.Windows.Forms.Label();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CartViewBackground)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cartPhoto)).BeginInit();
@@ -152,7 +155,7 @@ namespace CST4708_Project
             this.Column4,
             this.Column2,
             this.Column3});
-            this.CartDataGridView.Location = new System.Drawing.Point(100, 181);
+            this.CartDataGridView.Location = new System.Drawing.Point(128, 156);
             this.CartDataGridView.Name = "CartDataGridView";
             this.CartDataGridView.RowHeadersWidth = 51;
             this.CartDataGridView.RowTemplate.Height = 29;
@@ -182,11 +185,48 @@ namespace CST4708_Project
             this.Column3.Name = "Column3";
             this.Column3.Width = 125;
             // 
+            // ProceedToCheckoutButton
+            // 
+            this.ProceedToCheckoutButton.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.ProceedToCheckoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.ProceedToCheckoutButton.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.ProceedToCheckoutButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ProceedToCheckoutButton.Location = new System.Drawing.Point(523, 676);
+            this.ProceedToCheckoutButton.Name = "ProceedToCheckoutButton";
+            this.ProceedToCheckoutButton.Size = new System.Drawing.Size(196, 39);
+            this.ProceedToCheckoutButton.TabIndex = 28;
+            this.ProceedToCheckoutButton.Text = "Proceed To Checkout";
+            this.ProceedToCheckoutButton.UseVisualStyleBackColor = false;
+            this.ProceedToCheckoutButton.Click += new System.EventHandler(this.ProceedToCheckoutButton_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(531, 684);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(50, 20);
+            this.label1.TabIndex = 29;
+            this.label1.Text = "label1";
+            // 
+            // LogInStatus
+            // 
+            this.LogInStatus.AutoSize = true;
+            this.LogInStatus.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LogInStatus.Location = new System.Drawing.Point(0, 28);
+            this.LogInStatus.Name = "LogInStatus";
+            this.LogInStatus.Size = new System.Drawing.Size(232, 33);
+            this.LogInStatus.TabIndex = 30;
+            this.LogInStatus.Text = "Logged In As Guest";
+            this.LogInStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // CartView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1234, 740);
+            this.Controls.Add(this.LogInStatus);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.ProceedToCheckoutButton);
             this.Controls.Add(this.CartDataGridView);
             this.Controls.Add(this.cartPhoto);
             this.Controls.Add(this.CartViewCartLabel);
@@ -195,7 +235,6 @@ namespace CST4708_Project
             this.Name = "CartView";
             this.Text = "CartView";
             this.Load += new System.EventHandler(this.CartView_Load);
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.CartView_Paint);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CartViewBackground)).EndInit();
@@ -222,5 +261,8 @@ namespace CST4708_Project
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewImageColumn Column3;
+        private Button ProceedToCheckoutButton;
+        private Label label1;
+        private Label LogInStatus;
     }
 }
