@@ -44,6 +44,7 @@ namespace CST4708_Project
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.LogInStatus = new System.Windows.Forms.Label();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DesktopFormBackground)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cartPhoto)).BeginInit();
@@ -128,7 +129,7 @@ namespace CST4708_Project
             this.DesktopFormTitleLabel.Font = new System.Drawing.Font("Times New Roman", 36F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
             this.DesktopFormTitleLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.DesktopFormTitleLabel.Location = new System.Drawing.Point(438, 64);
+            this.DesktopFormTitleLabel.Location = new System.Drawing.Point(438, 47);
             this.DesktopFormTitleLabel.Name = "DesktopFormTitleLabel";
             this.DesktopFormTitleLabel.Size = new System.Drawing.Size(472, 67);
             this.DesktopFormTitleLabel.TabIndex = 9;
@@ -140,7 +141,7 @@ namespace CST4708_Project
             this.DesktopFormDescription.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.DesktopFormDescription.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
             this.DesktopFormDescription.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.DesktopFormDescription.Location = new System.Drawing.Point(391, 162);
+            this.DesktopFormDescription.Location = new System.Drawing.Point(391, 147);
             this.DesktopFormDescription.Name = "DesktopFormDescription";
             this.DesktopFormDescription.Size = new System.Drawing.Size(553, 34);
             this.DesktopFormDescription.TabIndex = 10;
@@ -205,11 +206,23 @@ namespace CST4708_Project
             this.Column3.Name = "Column3";
             this.Column3.Width = 125;
             // 
+            // LogInStatus
+            // 
+            this.LogInStatus.AutoSize = true;
+            this.LogInStatus.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LogInStatus.Location = new System.Drawing.Point(12, 38);
+            this.LogInStatus.Name = "LogInStatus";
+            this.LogInStatus.Size = new System.Drawing.Size(232, 33);
+            this.LogInStatus.TabIndex = 32;
+            this.LogInStatus.Text = "Logged In As Guest";
+            this.LogInStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // DesktopForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1302, 812);
+            this.Controls.Add(this.LogInStatus);
             this.Controls.Add(this.DesktopDataGridView);
             this.Controls.Add(this.cartPhoto);
             this.Controls.Add(this.DesktopFormDescription);
@@ -219,7 +232,6 @@ namespace CST4708_Project
             this.Name = "DesktopForm";
             this.Text = "DesktopForm";
             this.Load += new System.EventHandler(this.DesktopForm_Load);
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.DesktopForm_Paint);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DesktopFormBackground)).EndInit();
@@ -248,5 +260,6 @@ namespace CST4708_Project
         private DataGridViewTextBoxColumn Column6;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewImageColumn Column3;
+        private Label LogInStatus;
     }
 }
