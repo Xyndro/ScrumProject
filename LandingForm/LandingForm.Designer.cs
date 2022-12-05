@@ -55,6 +55,7 @@ namespace CST4708_Project
             this.FeaturedLaptopPicture = new System.Windows.Forms.PictureBox();
             this.FeaturedMonitorPicture = new System.Windows.Forms.PictureBox();
             this.FeaturedPeripheralPicture = new System.Windows.Forms.PictureBox();
+            this.LogInStatus = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.LandingFormBackground)).BeginInit();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cartPhoto)).BeginInit();
@@ -72,7 +73,6 @@ namespace CST4708_Project
             this.LandingFormBackground.Size = new System.Drawing.Size(1269, 730);
             this.LandingFormBackground.TabIndex = 7;
             this.LandingFormBackground.TabStop = false;
-            this.LandingFormBackground.Paint += new System.Windows.Forms.PaintEventHandler(this.LandingFormBackground_Paint);
             // 
             // LandingFormTitleLabel
             // 
@@ -352,12 +352,24 @@ namespace CST4708_Project
             this.FeaturedPeripheralPicture.TabIndex = 37;
             this.FeaturedPeripheralPicture.TabStop = false;
             // 
+            // LogInStatus
+            // 
+            this.LogInStatus.AutoSize = true;
+            this.LogInStatus.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LogInStatus.Location = new System.Drawing.Point(0, 28);
+            this.LogInStatus.Name = "LogInStatus";
+            this.LogInStatus.Size = new System.Drawing.Size(232, 33);
+            this.LogInStatus.TabIndex = 38;
+            this.LogInStatus.Text = "Logged In As Guest";
+            this.LogInStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // LandingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1248, 751);
+            this.Controls.Add(this.LogInStatus);
             this.Controls.Add(this.FeaturedPeripheralPicture);
             this.Controls.Add(this.FeaturedMonitorPicture);
             this.Controls.Add(this.FeaturedLaptopPicture);
@@ -423,5 +435,6 @@ namespace CST4708_Project
         private PictureBox FeaturedLaptopPicture;
         private PictureBox FeaturedMonitorPicture;
         private PictureBox FeaturedPeripheralPicture;
+        private Label LogInStatus;
     }
 }
