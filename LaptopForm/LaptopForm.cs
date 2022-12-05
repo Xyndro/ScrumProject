@@ -28,6 +28,9 @@ namespace CST4708_Project
             LaptopFormTitleLabel.Parent = LaptopFormBackground;
             LaptopFormTitleLabel.BackColor = Color.Transparent;
 
+            LogInStatus.Parent = LaptopFormBackground;
+            LogInStatus.BackColor = Color.Transparent;
+
             fillLaptopDataGridView();
         }
 
@@ -55,16 +58,6 @@ namespace CST4708_Project
                 DataGridViewRow dgvr = LaptopDataGridView.Rows[i];
                 dgvr.Height = 50;
             }
-        }
-
-        private void LaptopForm_Paint(object sender, PaintEventArgs e)
-        {
-            Graphics graphic = e.Graphics;
-            SolidBrush orangeBrush = new SolidBrush(Color.Orange);
-            SolidBrush blueBrush = new SolidBrush(Color.Blue);
-
-            graphic.FillRectangle(orangeBrush, 20, 20, 90, 80);
-            graphic.FillRectangle(blueBrush, 39, 40, 52, 40);
         }
 
         //methods for navigation
