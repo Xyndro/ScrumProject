@@ -32,6 +32,9 @@ namespace CST4708_Project
             MonitorFormDescription.Parent = MonitorFormBackground;
             MonitorFormDescription.BackColor = Color.Transparent;
 
+            LogInStatus.Parent = MonitorFormBackground;
+            LogInStatus.BackColor = Color.Transparent;
+
             fillMonitorGridView();
         }
 
@@ -59,18 +62,6 @@ namespace CST4708_Project
                 DataGridViewRow dgvr = MonitorDataGridView.Rows[i];
                 dgvr.Height = 50;
             }
-        }
-
-        //MonitorFormBackground -> creates our symbol on the picture box using graphics object
-        //Graphic located at top left of form under menu strip
-        private void MonitorForm_Paint(object sender, PaintEventArgs e)
-        {
-            Graphics graphic = e.Graphics;
-            SolidBrush orangeBrush = new SolidBrush(Color.Orange);
-            SolidBrush blueBrush = new SolidBrush(Color.Blue);
-
-            graphic.FillRectangle(orangeBrush, 20, 20, 90, 80);
-            graphic.FillRectangle(blueBrush, 39, 40, 52, 40);
         }
 
         //method for navigation
