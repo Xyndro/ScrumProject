@@ -60,17 +60,9 @@ namespace CST4708_Project
 
             DescriptionLabel.Parent = ProductViewBackground;
             DescriptionLabel.BackColor = Color.Transparent;
-        }
 
-        //ProductView_Paint -> creates our symbol in the form using graphics object
-        private void ProductView_Paint(object sender, PaintEventArgs e)
-        {
-            Graphics graphic = e.Graphics;
-            SolidBrush orangeBrush = new SolidBrush(Color.Orange);
-            SolidBrush blueBrush = new SolidBrush(Color.Blue);
-
-            graphic.FillRectangle(orangeBrush, 20, 20, 90, 80);
-            graphic.FillRectangle(blueBrush, 39, 40, 52, 40);
+            LogInStatus.Parent = ProductViewBackground;
+            LogInStatus.BackColor = Color.Transparent;
         }
 
         //navigation methods
