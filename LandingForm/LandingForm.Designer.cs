@@ -51,9 +51,17 @@ namespace CST4708_Project
             this.LaptopFeature = new System.Windows.Forms.Label();
             this.MonitorFeature = new System.Windows.Forms.Label();
             this.PeripheralFeature = new System.Windows.Forms.Label();
+            this.FeaturedDesktopPicture = new System.Windows.Forms.PictureBox();
+            this.FeaturedLaptopPicture = new System.Windows.Forms.PictureBox();
+            this.FeaturedMonitorPicture = new System.Windows.Forms.PictureBox();
+            this.FeaturedPeripheralPicture = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.LandingFormBackground)).BeginInit();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cartPhoto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FeaturedDesktopPicture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FeaturedLaptopPicture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FeaturedMonitorPicture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FeaturedPeripheralPicture)).BeginInit();
             this.SuspendLayout();
             // 
             // LandingFormBackground
@@ -61,7 +69,7 @@ namespace CST4708_Project
             this.LandingFormBackground.Image = global::CST4708_Project.Properties.Resources.formBackground;
             this.LandingFormBackground.Location = new System.Drawing.Point(-1, 27);
             this.LandingFormBackground.Name = "LandingFormBackground";
-            this.LandingFormBackground.Size = new System.Drawing.Size(1269, 715);
+            this.LandingFormBackground.Size = new System.Drawing.Size(1269, 730);
             this.LandingFormBackground.TabIndex = 7;
             this.LandingFormBackground.TabStop = false;
             this.LandingFormBackground.Paint += new System.Windows.Forms.PaintEventHandler(this.LandingFormBackground_Paint);
@@ -86,7 +94,7 @@ namespace CST4708_Project
             this.LandingFormDesktopsLabel.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
             this.LandingFormDesktopsLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LandingFormDesktopsLabel.Location = new System.Drawing.Point(56, 283);
+            this.LandingFormDesktopsLabel.Location = new System.Drawing.Point(67, 263);
             this.LandingFormDesktopsLabel.Name = "LandingFormDesktopsLabel";
             this.LandingFormDesktopsLabel.Size = new System.Drawing.Size(127, 34);
             this.LandingFormDesktopsLabel.TabIndex = 10;
@@ -161,7 +169,7 @@ namespace CST4708_Project
             this.LandingFormLaptopsLabel.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
             this.LandingFormLaptopsLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LandingFormLaptopsLabel.Location = new System.Drawing.Point(399, 283);
+            this.LandingFormLaptopsLabel.Location = new System.Drawing.Point(399, 263);
             this.LandingFormLaptopsLabel.Name = "LandingFormLaptopsLabel";
             this.LandingFormLaptopsLabel.Size = new System.Drawing.Size(113, 34);
             this.LandingFormLaptopsLabel.TabIndex = 13;
@@ -174,7 +182,7 @@ namespace CST4708_Project
             this.LandingFormMonitorsLabel.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
             this.LandingFormMonitorsLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LandingFormMonitorsLabel.Location = new System.Drawing.Point(716, 283);
+            this.LandingFormMonitorsLabel.Location = new System.Drawing.Point(716, 263);
             this.LandingFormMonitorsLabel.Name = "LandingFormMonitorsLabel";
             this.LandingFormMonitorsLabel.Size = new System.Drawing.Size(129, 34);
             this.LandingFormMonitorsLabel.TabIndex = 14;
@@ -187,7 +195,7 @@ namespace CST4708_Project
             this.LandingFormPeripheralsLabel.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
             this.LandingFormPeripheralsLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LandingFormPeripheralsLabel.Location = new System.Drawing.Point(1025, 283);
+            this.LandingFormPeripheralsLabel.Location = new System.Drawing.Point(1025, 263);
             this.LandingFormPeripheralsLabel.Name = "LandingFormPeripheralsLabel";
             this.LandingFormPeripheralsLabel.Size = new System.Drawing.Size(158, 34);
             this.LandingFormPeripheralsLabel.TabIndex = 15;
@@ -199,7 +207,7 @@ namespace CST4708_Project
             this.FeaturedDesktopButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.FeaturedDesktopButton.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.FeaturedDesktopButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.FeaturedDesktopButton.Location = new System.Drawing.Point(28, 659);
+            this.FeaturedDesktopButton.Location = new System.Drawing.Point(30, 689);
             this.FeaturedDesktopButton.Name = "FeaturedDesktopButton";
             this.FeaturedDesktopButton.Size = new System.Drawing.Size(196, 39);
             this.FeaturedDesktopButton.TabIndex = 16;
@@ -213,7 +221,7 @@ namespace CST4708_Project
             this.FeaturedLaptopButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.FeaturedLaptopButton.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.FeaturedLaptopButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.FeaturedLaptopButton.Location = new System.Drawing.Point(346, 659);
+            this.FeaturedLaptopButton.Location = new System.Drawing.Point(345, 689);
             this.FeaturedLaptopButton.Name = "FeaturedLaptopButton";
             this.FeaturedLaptopButton.Size = new System.Drawing.Size(196, 39);
             this.FeaturedLaptopButton.TabIndex = 17;
@@ -227,7 +235,7 @@ namespace CST4708_Project
             this.FeaturedMonitorButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.FeaturedMonitorButton.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.FeaturedMonitorButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.FeaturedMonitorButton.Location = new System.Drawing.Point(678, 659);
+            this.FeaturedMonitorButton.Location = new System.Drawing.Point(677, 689);
             this.FeaturedMonitorButton.Name = "FeaturedMonitorButton";
             this.FeaturedMonitorButton.Size = new System.Drawing.Size(196, 39);
             this.FeaturedMonitorButton.TabIndex = 18;
@@ -241,7 +249,7 @@ namespace CST4708_Project
             this.FeaturedPeripheralButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.FeaturedPeripheralButton.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.FeaturedPeripheralButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.FeaturedPeripheralButton.Location = new System.Drawing.Point(1002, 654);
+            this.FeaturedPeripheralButton.Location = new System.Drawing.Point(1002, 689);
             this.FeaturedPeripheralButton.Name = "FeaturedPeripheralButton";
             this.FeaturedPeripheralButton.Size = new System.Drawing.Size(196, 48);
             this.FeaturedPeripheralButton.TabIndex = 19;
@@ -276,7 +284,7 @@ namespace CST4708_Project
             // 
             this.DesktopFeature.AutoSize = true;
             this.DesktopFeature.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.DesktopFeature.Location = new System.Drawing.Point(56, 617);
+            this.DesktopFeature.Location = new System.Drawing.Point(56, 654);
             this.DesktopFeature.Name = "DesktopFeature";
             this.DesktopFeature.Size = new System.Drawing.Size(170, 22);
             this.DesktopFeature.TabIndex = 30;
@@ -286,7 +294,7 @@ namespace CST4708_Project
             // 
             this.LaptopFeature.AutoSize = true;
             this.LaptopFeature.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LaptopFeature.Location = new System.Drawing.Point(362, 617);
+            this.LaptopFeature.Location = new System.Drawing.Point(362, 654);
             this.LaptopFeature.Name = "LaptopFeature";
             this.LaptopFeature.Size = new System.Drawing.Size(160, 22);
             this.LaptopFeature.TabIndex = 31;
@@ -296,7 +304,7 @@ namespace CST4708_Project
             // 
             this.MonitorFeature.AutoSize = true;
             this.MonitorFeature.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.MonitorFeature.Location = new System.Drawing.Point(657, 617);
+            this.MonitorFeature.Location = new System.Drawing.Point(655, 654);
             this.MonitorFeature.Name = "MonitorFeature";
             this.MonitorFeature.Size = new System.Drawing.Size(169, 22);
             this.MonitorFeature.TabIndex = 32;
@@ -306,18 +314,54 @@ namespace CST4708_Project
             // 
             this.PeripheralFeature.AutoSize = true;
             this.PeripheralFeature.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PeripheralFeature.Location = new System.Drawing.Point(1002, 617);
+            this.PeripheralFeature.Location = new System.Drawing.Point(1002, 654);
             this.PeripheralFeature.Name = "PeripheralFeature";
             this.PeripheralFeature.Size = new System.Drawing.Size(188, 22);
             this.PeripheralFeature.TabIndex = 33;
             this.PeripheralFeature.Text = "Peripheral Name Here";
+            // 
+            // FeaturedDesktopPicture
+            // 
+            this.FeaturedDesktopPicture.Location = new System.Drawing.Point(12, 336);
+            this.FeaturedDesktopPicture.Name = "FeaturedDesktopPicture";
+            this.FeaturedDesktopPicture.Size = new System.Drawing.Size(233, 294);
+            this.FeaturedDesktopPicture.TabIndex = 34;
+            this.FeaturedDesktopPicture.TabStop = false;
+            // 
+            // FeaturedLaptopPicture
+            // 
+            this.FeaturedLaptopPicture.Location = new System.Drawing.Point(329, 336);
+            this.FeaturedLaptopPicture.Name = "FeaturedLaptopPicture";
+            this.FeaturedLaptopPicture.Size = new System.Drawing.Size(233, 294);
+            this.FeaturedLaptopPicture.TabIndex = 35;
+            this.FeaturedLaptopPicture.TabStop = false;
+            // 
+            // FeaturedMonitorPicture
+            // 
+            this.FeaturedMonitorPicture.Location = new System.Drawing.Point(667, 336);
+            this.FeaturedMonitorPicture.Name = "FeaturedMonitorPicture";
+            this.FeaturedMonitorPicture.Size = new System.Drawing.Size(233, 294);
+            this.FeaturedMonitorPicture.TabIndex = 36;
+            this.FeaturedMonitorPicture.TabStop = false;
+            // 
+            // FeaturedPeripheralPicture
+            // 
+            this.FeaturedPeripheralPicture.Location = new System.Drawing.Point(1002, 336);
+            this.FeaturedPeripheralPicture.Name = "FeaturedPeripheralPicture";
+            this.FeaturedPeripheralPicture.Size = new System.Drawing.Size(233, 294);
+            this.FeaturedPeripheralPicture.TabIndex = 37;
+            this.FeaturedPeripheralPicture.TabStop = false;
             // 
             // LandingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1248, 740);
+            this.ClientSize = new System.Drawing.Size(1248, 751);
+            this.Controls.Add(this.FeaturedPeripheralPicture);
+            this.Controls.Add(this.FeaturedMonitorPicture);
+            this.Controls.Add(this.FeaturedLaptopPicture);
+            this.Controls.Add(this.FeaturedDesktopPicture);
             this.Controls.Add(this.PeripheralFeature);
             this.Controls.Add(this.MonitorFeature);
             this.Controls.Add(this.LaptopFeature);
@@ -342,6 +386,10 @@ namespace CST4708_Project
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cartPhoto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FeaturedDesktopPicture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FeaturedLaptopPicture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FeaturedMonitorPicture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FeaturedPeripheralPicture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -371,5 +419,9 @@ namespace CST4708_Project
         private Label LaptopFeature;
         private Label MonitorFeature;
         private Label PeripheralFeature;
+        private PictureBox FeaturedDesktopPicture;
+        private PictureBox FeaturedLaptopPicture;
+        private PictureBox FeaturedMonitorPicture;
+        private PictureBox FeaturedPeripheralPicture;
     }
 }
