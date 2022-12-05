@@ -129,7 +129,7 @@ namespace CST4708_Project
             this.LaptopFormTitleLabel.Font = new System.Drawing.Font("Times New Roman", 36F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
             this.LaptopFormTitleLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LaptopFormTitleLabel.Location = new System.Drawing.Point(439, 66);
+            this.LaptopFormTitleLabel.Location = new System.Drawing.Point(439, 49);
             this.LaptopFormTitleLabel.Name = "LaptopFormTitleLabel";
             this.LaptopFormTitleLabel.Size = new System.Drawing.Size(446, 67);
             this.LaptopFormTitleLabel.TabIndex = 10;
@@ -141,7 +141,7 @@ namespace CST4708_Project
             this.LaptopFormDescription.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.LaptopFormDescription.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
             this.LaptopFormDescription.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LaptopFormDescription.Location = new System.Drawing.Point(387, 143);
+            this.LaptopFormDescription.Location = new System.Drawing.Point(388, 143);
             this.LaptopFormDescription.Name = "LaptopFormDescription";
             this.LaptopFormDescription.Size = new System.Drawing.Size(535, 34);
             this.LaptopFormDescription.TabIndex = 11;
@@ -210,7 +210,7 @@ namespace CST4708_Project
             // 
             this.LogInStatus.AutoSize = true;
             this.LogInStatus.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LogInStatus.Location = new System.Drawing.Point(0, 26);
+            this.LogInStatus.Location = new System.Drawing.Point(12, 37);
             this.LogInStatus.Name = "LogInStatus";
             this.LogInStatus.Size = new System.Drawing.Size(232, 33);
             this.LogInStatus.TabIndex = 31;
