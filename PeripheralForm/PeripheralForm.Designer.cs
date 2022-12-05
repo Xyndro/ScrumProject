@@ -43,6 +43,7 @@ namespace CST4708_Project
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.LogInStatus = new System.Windows.Forms.Label();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PeripheralFormBackground)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cartPhoto)).BeginInit();
@@ -187,7 +188,7 @@ namespace CST4708_Project
             this.Column2.HeaderText = "Peripheral Price";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
-            this.Column2.Width = 140;
+            this.Column2.Width = 128;
             // 
             // Column3
             // 
@@ -196,11 +197,23 @@ namespace CST4708_Project
             this.Column3.Name = "Column3";
             this.Column3.Width = 125;
             // 
+            // LogInStatus
+            // 
+            this.LogInStatus.AutoSize = true;
+            this.LogInStatus.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LogInStatus.Location = new System.Drawing.Point(0, 28);
+            this.LogInStatus.Name = "LogInStatus";
+            this.LogInStatus.Size = new System.Drawing.Size(232, 33);
+            this.LogInStatus.TabIndex = 31;
+            this.LogInStatus.Text = "Logged In As Guest";
+            this.LogInStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // PeripheralForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1295, 812);
+            this.Controls.Add(this.LogInStatus);
             this.Controls.Add(this.PeripheralDataGridView);
             this.Controls.Add(this.cartPhoto);
             this.Controls.Add(this.PeripheralFormDescription);
@@ -210,7 +223,6 @@ namespace CST4708_Project
             this.Name = "PeripheralForm";
             this.Text = "PeripheralForm";
             this.Load += new System.EventHandler(this.PeripheralForm_Load);
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.PeripheralForm_Paint);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PeripheralFormBackground)).EndInit();
@@ -238,5 +250,6 @@ namespace CST4708_Project
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewImageColumn Column3;
+        private Label LogInStatus;
     }
 }
