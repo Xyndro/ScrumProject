@@ -1,70 +1,120 @@
+using Microsoft.VisualBasic.ApplicationServices;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
 namespace CST4708_Project
 {
-    public partial class DesktopForm : Form
+    public partial class LandingForm : Form
     {
         SqlConnection myConn;
         SqlCommand myCmd;
         SqlDataReader myDataReader;
 
-
-        public DesktopForm()
+        public LandingForm()
         {
             InitializeComponent();
         }
 
-        private void DesktopForm_Load(object sender, EventArgs e)
+        //LandingForm_Load -> Upon loading, labels become transparent to blend in with background picture box
+        //Spaces seperate each element on form
+        private void LandingForm_Load(object sender, EventArgs e)
         {
-            DesktopFormTitleLabel.Parent = DesktopFormBackground;
-            DesktopFormTitleLabel.BackColor = Color.Transparent;
+            LandingFormTitleLabel.Parent = LandingFormBackground;
+            LandingFormTitleLabel.BackColor = Color.Transparent;
 
-            DesktopFormDescription.Parent = DesktopFormBackground;
-            DesktopFormDescription.BackColor = Color.Transparent;
+            LandingFormDescription.Parent = LandingFormBackground;
+            LandingFormDescription.BackColor = Color.Transparent;
 
-            LogInStatus.Parent = DesktopFormBackground;
+            LandingFormDesktopsLabel.Parent = LandingFormBackground;
+            LandingFormDesktopsLabel.BackColor = Color.Transparent;
+
+            LandingFormLaptopsLabel.Parent = LandingFormBackground;
+            LandingFormLaptopsLabel.BackColor = Color.Transparent;
+
+            LandingFormMonitorsLabel.Parent = LandingFormBackground;
+            LandingFormMonitorsLabel.BackColor = Color.Transparent;
+
+            LandingFormPeripheralsLabel.Parent = LandingFormBackground;
+            LandingFormPeripheralsLabel.BackColor = Color.Transparent;
+
+            LogInStatus.Parent = LandingFormBackground;
             LogInStatus.BackColor = Color.Transparent;
 
-            fillDesktopDataGridView();
+            DesktopNameDisplay();
+            LaptopNameDisplay();
+            MonitorNameDisplay();
+            PeripheralNameDisplay();
 
         }
 
-        public void fillDesktopDataGridView()
+        public void DesktopNameDisplay()
         {
-            DesktopDataGridView.Rows.Clear();
+            //sql connection to fill in label with database information
             myConn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\xyndr\\source\\repos\\CST4708_Project\\CST4708_Database.mdf;Integrated Security=True;Connect Timeout=30");
             myConn.Open();
-
-            myCmd = new SqlCommand("Select * from Desktop", myConn);
+            String desktopLabelQuery = "Select DesktopName From Desktop Where DesktopName = 'XPS Desktop'";
+            myCmd = new SqlCommand(desktopLabelQuery, myConn);
             myDataReader = myCmd.ExecuteReader();
 
             while (myDataReader.Read())
             {
-                DesktopDataGridView.Rows.Add(myDataReader["DesktopName"].ToString(), myDataReader["DesktopManufacturer"].ToString(),
-                                             myDataReader["DesktopPrice"].ToString(), myDataReader["DesktopImage"]);
+                DesktopFeature.Text = myDataReader.GetValue(0).ToString();
             }
-
-            myDataReader.Close();
             myConn.Close();
-
-            //stretches dataGridView for spacing between one item to the next
-            for (int i = 0; i < DesktopDataGridView.Rows.Count; i++)
-            {
-                DataGridViewRow dgvr = DesktopDataGridView.Rows[i];
-                dgvr.Height = 50;
-            }
         }
 
-        //methods for navigation
+        public void LaptopNameDisplay()
+        {
+            //sql connection to fill in label with database information
+            myConn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\xyndr\\source\\repos\\CST4708_Project\\CST4708_Database.mdf;Integrated Security=True;Connect Timeout=30");
+            myConn.Open();
+            String laptopLabelQuery = "Select LaptopName From Laptop Where LaptopName = 'TUF Gaming Laptop'";
+            myCmd = new SqlCommand(laptopLabelQuery, myConn);
+            myDataReader = myCmd.ExecuteReader();
+
+            while (myDataReader.Read())
+            {
+                LaptopFeature.Text = myDataReader.GetValue(0).ToString();
+            }
+            myConn.Close();
+        }
+
+        public void MonitorNameDisplay()
+        {
+            //sql connection to fill in label with database information
+            myConn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\xyndr\\source\\repos\\CST4708_Project\\CST4708_Database.mdf;Integrated Security=True;Connect Timeout=30");
+            myConn.Open();
+            String monitorLabelQuery = "Select MonitorName From Monitor Where MonitorName = 'LED FHD FreeSync HDMI Monitor'";
+            myCmd = new SqlCommand(monitorLabelQuery, myConn);
+            myDataReader = myCmd.ExecuteReader();
+
+            while (myDataReader.Read())
+            {
+                MonitorFeature.Text = myDataReader.GetValue(0).ToString();
+            }
+            myConn.Close();
+        }
+
+
+        public void PeripheralNameDisplay()
+        {
+            //sql connection to fill in label with database information
+            myConn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\xyndr\\source\\repos\\CST4708_Project\\CST4708_Database.mdf;Integrated Security=True;Connect Timeout=30");
+            myConn.Open();
+            String peripheralLabelQuery = "Select PeripheralName From Peripheral Where PeripheralName = 'PULSE 3D Wireless Headset'";
+            myCmd = new SqlCommand(peripheralLabelQuery, myConn);
+            myDataReader = myCmd.ExecuteReader();
+
+            while (myDataReader.Read())
+            {
+                PeripheralFeature.Text = myDataReader.GetValue(0).ToString();
+            }
+            myConn.Close();
+        }
+
+
+        //methods below are click events for navigation
+        //---------------------------------------------------------------------------------------
         private void homeToolStrip_Click(object sender, EventArgs e)
         {
             LandingForm home = new LandingForm();
@@ -76,7 +126,7 @@ namespace CST4708_Project
         {
             DesktopForm desktop = new DesktopForm();
             desktop.Show();
-            Visible = false;
+            Visible = false; 
         }
 
         private void laptopToolStrip_Click(object sender, EventArgs e)
@@ -107,11 +157,62 @@ namespace CST4708_Project
             Visible = false;
         }
 
+        private void LandingFormToDesktopsButton_Click(object sender, EventArgs e)
+        {
+            DesktopForm desktop = new DesktopForm();
+            desktop.Show();
+            Visible = false;
+        }
+
+        private void LandingFormToLaptopsButton_Click(object sender, EventArgs e)
+        {
+            LaptopForm laptop = new LaptopForm();
+            laptop.Show();
+            Visible = false;
+        }
+
+        private void LandingFormToMonitorsButton_Click(object sender, EventArgs e)
+        {
+            MonitorForm monitor = new MonitorForm();
+            monitor.Show();
+            Visible = false;
+        }
+
+        private void LandingFormToPeripheralsButton_Click(object sender, EventArgs e)
+        {
+            PeripheralForm peripheral = new PeripheralForm();
+            peripheral.Show();
+            Visible = false;
+        }
+
+        //Methods to see featured products
+        private void FeaturedDesktopButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FeaturedLaptopButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FeaturedMonitorButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FeaturedPeripheralButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void cartPhoto_Click(object sender, EventArgs e)
         {
             CartView cart = new CartView();
             cart.Show();
             Visible = false;
         }
+
+        //---------------------------------------------------------------------------------------
     }
 }
