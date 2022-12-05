@@ -21,16 +21,9 @@ namespace CST4708_Project
         {
             CartViewCartLabel.Parent = CartViewBackground;
             CartViewCartLabel.BackColor = Color.Transparent;
-        }
 
-        private void CartView_Paint(object sender, PaintEventArgs e)
-        {
-            Graphics graphic = e.Graphics;
-            SolidBrush orangeBrush = new SolidBrush(Color.Orange);
-            SolidBrush blueBrush = new SolidBrush(Color.Blue);
-
-            graphic.FillRectangle(orangeBrush, 20, 20, 90, 80);
-            graphic.FillRectangle(blueBrush, 39, 40, 52, 40);
+            LogInStatus.Parent = CartViewBackground;
+            LogInStatus.BackColor = Color.Transparent;
         }
 
         //navigation methods
@@ -73,6 +66,13 @@ namespace CST4708_Project
         {
             LogInForm logIn = new LogInForm();
             logIn.Show();
+            Visible = false;
+        }
+
+        private void ProceedToCheckoutButton_Click(object sender, EventArgs e)
+        {
+            BillingAndAddressingForm billingAddressing = new BillingAndAddressingForm();
+            billingAddressing.Show();
             Visible = false;
         }
     }
