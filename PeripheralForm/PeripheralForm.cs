@@ -32,6 +32,9 @@ namespace CST4708_Project
             PeripheralFormDescription.Parent = PeripheralFormBackground;
             PeripheralFormDescription.BackColor = Color.Transparent;
 
+            LogInStatus.Parent = PeripheralFormBackground;
+            LogInStatus.BackColor = Color.Transparent;
+
             fillPeripheralDataGridView();
         }
 
@@ -59,16 +62,6 @@ namespace CST4708_Project
                 DataGridViewRow dgvr = PeripheralDataGridView.Rows[i];
                 dgvr.Height = 50;
             }
-        }
-
-        private void PeripheralForm_Paint(object sender, PaintEventArgs e)
-        {
-            Graphics graphic = e.Graphics;
-            SolidBrush orangeBrush = new SolidBrush(Color.Orange);
-            SolidBrush blueBrush = new SolidBrush(Color.Blue);
-
-            graphic.FillRectangle(orangeBrush, 20, 20, 90, 80);
-            graphic.FillRectangle(blueBrush, 39, 40, 52, 40);
         }
 
         //methods for navigation
