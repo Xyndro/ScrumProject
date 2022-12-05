@@ -31,6 +31,12 @@ namespace CST4708_Project
             LogInStatus.Parent = LaptopFormBackground;
             LogInStatus.BackColor = Color.Transparent;
 
+            LaptopFormDescription.Parent = LaptopFormBackground;
+            LaptopFormDescription.BackColor = Color.Transparent;
+
+            LogInStatus.Parent = LaptopFormBackground;
+            LogInStatus.BackColor = Color.Transparent;
+
             fillLaptopDataGridView();
         }
 
